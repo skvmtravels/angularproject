@@ -20,34 +20,38 @@
         <div class="main">
             <div class="card">
             <h2 style="text-align: center;">Modify Flight Details to be updated..</h2>
-            <form>
+            <form #flightForm1="ngForm" (ngSubmit)="updateFlight()">
                 <div class="container">
-                <label for="fnumber"><b>Enter Flight Number whose data has to be updated</b></label><br>
-                <input type="number" placeholder="Enter Flight number" name="fnumber" id="fnumber"><br>
+                <label for="flight_no"><b>Enter Flight Number whose data has to be updated</b></label><br>
+                <input type="number" placeholder="Enter Flight number" name="flight_no" id="flight_no" #flight_no=ngModel [(ngModel)]=flight.flight_no><br>
             
                 <br>
-                <label for="fsource"><b>Source</b></label><br>
-                <input type="text" placeholder="Enter from place" name="fsource" id="fsource"><br>
+                <label for="flightName"><b>Flight Name</b></label><br>
+                <input type="text" placeholder="Enter flight name" name="flightName" id="flightName" #flightName=ngModel [(ngModel)]=flight.flightName><br>
             
                 <br>
-                <label for="fdestination"><b>Destination</b></label><br>
-                <input type="text" placeholder="Enter to place" name="fdestination" id="fdestination"><br>
+                <label for="fromCity"><b>Source</b></label><br>
+                <input type="text" placeholder="Enter from place" name="fromCity" id="fromCity" #fromCity=ngModel [(ngModel)]=flight.fromCity><br>
             
                 <br>
-                <label for="fdtime"><b>Departure Time</b></label><br>
-                <input type="time" placeholder="Enter Dept Time" name="fdtime" id="fdtime"><br>
+                <label for="toCity"><b>Destination</b></label><br>
+                <input type="text" placeholder="Enter to place" name="toCity" id="toCity" #toCity=ngModel [(ngModel)]=flight.toCity><br>
             
                 <br>
-                <label for="fatime"><b>Arrival Time</b></label><br>
-                <input type="time" placeholder="Enter Arrival Time" name="fatime" id="fatime"><br>
+                <label for="depTime"><b>Departure Time</b></label><br>
+                <input type="time" placeholder="Enter Dept Time" name="depTime" id="depTime" #depTime=ngModel [(ngModel)]=flight.depTime><br>
+            
+                <br>
+                <label for="arrTime"><b>Arrival Time</b></label><br>
+                <input type="time" placeholder="Enter Arrival Time" name="arrTime" id="arrTime" #arrTime=ngModel [(ngModel)]=flight.arrTime><br>
 
                 <br>
-                <label for="fprice"><b>Ticket Price</b></label><br>
-                <input type="number" placeholder="Enter Ticket Price" name="fprice" id="fprice"><br>
+                <label for="ticketPrice"><b>Ticket Price</b></label><br>
+                <input type="number" placeholder="Enter Ticket Price" name="ticketPrice" id="ticketPrice" #ticketPrice=ngModel [(ngModel)]=flight.ticketPrice><br>
 
                 <br>
-                <label for="fcapacity"><b>Capacity</b></label><br>
-                <input type="number" placeholder="Enter Total Capacity" name="fcapacity" id="fcapacity"><br>
+                <label for="capacity"><b>Capacity</b></label><br>
+                <input type="number" placeholder="Enter Total Capacity" name="capacity" id="capacity" #capacity=ngModel [(ngModel)]=flight.capacity><br>
 
                 <br>
                 <button type="submit">Update Flight</button>

@@ -28,7 +28,8 @@ import { UserseatmapComponent } from './userseatmap/userseatmap.component';
 import { UserpassengerdetailsComponent } from './userpassengerdetails/userpassengerdetails.component';
 import { UserpaymentComponent } from './userpayment/userpayment.component';
 import { UserticketprintComponent } from './userticketprint/userticketprint.component';
-
+import { HeaderComponent } from './header/header.component';
+import { ShowSearchedFlightsComponent } from './show-searched-flights/show-searched-flights.component';
 
 
 
@@ -55,7 +56,9 @@ import { UserticketprintComponent } from './userticketprint/userticketprint.comp
     UserseatmapComponent,
     UserpassengerdetailsComponent,
     UserpaymentComponent,
-    UserticketprintComponent
+    UserticketprintComponent,
+    HeaderComponent,
+    ShowSearchedFlightsComponent,
 
     ],
   imports: [

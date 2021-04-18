@@ -24,6 +24,7 @@ import { UserseatmapComponent } from './userseatmap/userseatmap.component';
 import { UserpassengerdetailsComponent } from './userpassengerdetails/userpassengerdetails.component';
 import { UserpaymentComponent } from './userpayment/userpayment.component';
 import { UserticketprintComponent } from './userticketprint/userticketprint.component';
+import { ShowSearchedFlightsComponent } from './show-searched-flights/show-searched-flights.component';
 
 const routes: Routes = [
   {​​​​​​​
@@ -62,9 +63,24 @@ const routes: Routes = [
   {​​​​​​​
     path:'userProfilePage',component:UserprofileComponent
   }​​​​​​​​​​​​​​,
+  {
+    path:'userPassengerDetailsPage',component:UserpassengerdetailsComponent
+  },
+  {
+    path:'userSeatMapPage',component:UserseatmapComponent
+  },
+  {
+    path:'userPaymentPage',component:UserpaymentComponent
+  }​​​​​​​​​​​​​​,
+  {
+    path:'userToBookPage',component:UsertobookflightlistComponent
+  },
   {​​​​​​​
     path:'userSearchFlightsPage',component:UsersearchflightsComponent
-  }​​​​​​​​​​​​​​,
+  },
+  {​​​​​​​
+    path:'userTicketPrintPage',component:UserticketprintComponent
+  },
   {​​​​​​​
     path:'addFlightsPage',component:AdminaddflightsComponent
   }​​​​​​​​​​​​​​,
@@ -78,13 +94,7 @@ const routes: Routes = [
     path:'deleteFlightsPage',component:AdmindeleteflightsComponent
   },
   {
-    path:'userPassengerDetailsPage',component:UserpassengerdetailsComponent
-  },
-  {
-    path:'userSeatMapPage',component:UserseatmapComponent
-  },
-  {
-    path:'userPaymentPage',component:UserpaymentComponent
+    path:'showSearchedFlights',component:ShowSearchedFlightsComponent
   }
 ];
 

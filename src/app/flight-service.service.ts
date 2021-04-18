@@ -8,6 +8,9 @@ import { Flight } from './flight';
 })
 export class FlightServiceService {
 
+  fromCityData:string;
+  toCityData:string;
+
   constructor(private httpClient:HttpClient) { }
 
   addFlight(flight:Flight):Observable<Flight>{
@@ -20,5 +23,13 @@ export class FlightServiceService {
 
   deleteFlight(flight_no:number):Observable<void>{
     return this.httpClient.delete<void>("http://localhost:9090/deleteflight/"+flight_no);
+  }
+
+  searchFlight(fromCity:string,toCity:string):Observable<Flight[]>{
+    return this.httpClient.get<Flight[]>("http://localhost:9090/searchflight/"+fromCity+"/"+toCity);
+  }
+
+  updateFlight(flight:Flight):Observable<Flight>{
+    return this.httpClient.put<Flight>("http://localhost:9090/updateflight",flight);
   }
 }
