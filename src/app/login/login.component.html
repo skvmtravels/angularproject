@@ -1,0 +1,17 @@
+  <div class="box">
+      <h2>Login</h2>
+      <form #loginForm="ngForm" (ngSubmit)="checkLogin(loginForm)">
+        <div class="inputBox">
+          <input type="email" name="email" required >
+          <label>Username</label>
+        </div>
+        <div class="inputBox">
+          <input type="password" name="password" required>
+          <label>Password</label>
+        </div>
+        <input  [routerLink]="['/userDashboardPage']" type="submit" name="sign-in" value="Sign In">
+        <input [routerLink]="['/homePage']" type="submit" name="cancel" value="Cancel"> 
+        <div class="psw"><a [routerLink]="['/loginPage']">Forgot password?</a></div>
+      </form>
+    </div>
+  

@@ -1,0 +1,101 @@
+<!-- <div class="box">
+  <h2>Registration</h2>  
+<form>    
+  <div class="inputBox">
+    <input type="text" name="fname" required >
+    <label>First Name</label>
+  </div>                  
+  <div class="inputBox">
+    <input type="text" name="lname" required >
+    <label>Last Name</label>
+  </div>   
+  <div class="inputBox">
+    <input type="email" name="email" required >
+    <label>Email Id</label>
+  </div>               
+  <div class="inputBox">
+    <input type="password" name="password" required >
+    <label>Password</label>
+  </div>  
+  <div class="inputBox">
+    <input type="password" name="cpassword" required >
+    <label>Confirm Password</label>
+  </div>                            
+  <input type="submit" name="reg" value="Register">
+  <input type="submit" name="cancel" value="Cancel"> 
+  </form> 
+</div>   -->
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+  <div class="form-v9">
+      <div class="page-content">
+          <div class="form-v9-content" style="background-image: url('/assets/img/simon-maage-C9dhUVP-o6w-unsplash.jpg')">
+              <form class="form-detail" #regForm="ngForm" (ngSubmit)="regUser(regForm)">
+                  <h2>Registration Form</h2>
+                  <div class="form-row-total">
+                      <div class="form-row">
+                          <input type="text" name="fname"  id="fname" class="input-text" placeholder="First Name" minlength="4" required> 
+                          <!-- [(ngModel)]="user.userFName"> #fn="ngModel" -->
+               <!-- <span *ngIf="(fn.dirty||fn.touched) && fn.invalid" style="color: red;border-color: red;">
+                <span *ngIf="fn.errors.required">First Name is Required</span>
+                <span *ngIf="fn.errors.minlength">Name must be 4</span> -->
+            
+                      </div>
+                      <div class="form-row">
+                          <input type="text"  name="lname" id="lname" class="input-text" placeholder="Last Name" required >
+              <!-- <span *ngIf="(ln.dirty||fn.touched) && ln.invalid" style="color: red;border-color: red;">
+                <span *ngIf="ln.errors.required">First Name is Required</span>
+                <span *ngIf="ln.errors.minlength">Name must be 4</span>
+            </span> -->
+            </div>
+                  </div>
+                  <div class="form-row-total">
+                      <div class="form-row">
+                          <input type="password" name="password" id="password"  class="input-text" placeholder="Your Password" 
+                      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+                      <!-- [(ngModel)]="user.userPassword"> #ps="ngModel" -->
+                      </div>
+                      <div class="form-row">
+                          <input type="password" name="confirm-password" id="confirm-password" class="input-text" placeholder="Confirm Password" required>
+                      </div>   
+                  </div>
+                  <div class="form-row-total">
+                  <div class="form-row">
+                      <input type="email" name="email" id="email" class="input-text" placeholder="Email Id" 
+                          pattern="[a-z0-9._%+-]+@[a-z0-9-]+\.[a-z]{2,4}$"
+                      required >
+                  </div>
+                  <div class="form-row">
+                      <input type="date" name="dob" id="dob" class="input-text" placeholder="DOB" required>
+                  </div>
+              </div>
+                  <div class="form-row-last">
+           <input  [routerLink]="['/homePage']" type="submit" name="register" class="register">
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>

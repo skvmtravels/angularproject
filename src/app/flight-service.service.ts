@@ -1,0 +1,24 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Flight } from './flight';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class FlightServiceService {
+
+  constructor(private httpClient:HttpClient) { }
+
+  addFlight(flight:Flight):Observable<Flight>{
+    return this.httpClient.post<Flight>("http://localhost:9090/addflight",flight);
+  }
+
+  viewAllFlights():Observable<Flight[]>{
+    return this.httpClient.get<Flight[]>("http://localhost:9090/viewallflights");
+  }
+
+  deleteFlight(flight_no:number):Observable<void>{
+    return this.httpClient.delete<void>("http://localhost:9090/deleteflight/"+flight_no);
+  }
+}

@@ -1,0 +1,60 @@
+<header>
+    <nav>
+        <div class="row">
+            <a [routerLink]="['/adminDashboardPage']"><img src="/assets/img/admin.JPG" alt="Admin Logo" class="logo"></a>
+            <ul class="main-nav">
+                <li><a [routerLink]="['/addFlightsPage']">Add Flights</a></li>
+                <li><a [routerLink]="['/updateFlightsPage']">Update Flights</a></li>
+                <li><a [routerLink]="['/deleteFlightsPage']">Delete Flights</a></li>
+                <li><a [routerLink]="['/viewAllFlightsPage']">View All Flights</a></li>
+                <li><a [routerLink]="['/homePage']">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+
+<section class="section-form">
+    <div class="row">
+        <div class="main">
+            <div class="card">
+            <h2 style="text-align: center;">Modify Flight Details to be updated..</h2>
+            <form>
+                <div class="container">
+                <label for="fnumber"><b>Enter Flight Number whose data has to be updated</b></label><br>
+                <input type="number" placeholder="Enter Flight number" name="fnumber" id="fnumber"><br>
+            
+                <br>
+                <label for="fsource"><b>Source</b></label><br>
+                <input type="text" placeholder="Enter from place" name="fsource" id="fsource"><br>
+            
+                <br>
+                <label for="fdestination"><b>Destination</b></label><br>
+                <input type="text" placeholder="Enter to place" name="fdestination" id="fdestination"><br>
+            
+                <br>
+                <label for="fdtime"><b>Departure Time</b></label><br>
+                <input type="time" placeholder="Enter Dept Time" name="fdtime" id="fdtime"><br>
+            
+                <br>
+                <label for="fatime"><b>Arrival Time</b></label><br>
+                <input type="time" placeholder="Enter Arrival Time" name="fatime" id="fatime"><br>
+
+                <br>
+                <label for="fprice"><b>Ticket Price</b></label><br>
+                <input type="number" placeholder="Enter Ticket Price" name="fprice" id="fprice"><br>
+
+                <br>
+                <label for="fcapacity"><b>Capacity</b></label><br>
+                <input type="number" placeholder="Enter Total Capacity" name="fcapacity" id="fcapacity"><br>
+
+                <br>
+                <button type="submit">Update Flight</button>
+                </div>
+            </form>
+        </div>
+    </div>    
+</div>
+</section>
+

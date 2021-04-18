@@ -1,0 +1,133 @@
+        <header>
+            <nav>
+                <div class="row">
+                    <a [routerLink]="['/adminDashboardPage']"><img src="/assets/img/admin.JPG" alt="Admin Logo" class="logo"></a>
+                    <ul class="main-nav">
+                        <li><a [routerLink]="['/addFlightsPage']">Add Flights</a></li>
+                        <li><a [routerLink]="['/updateFlightsPage']">Update Flights</a></li>
+                        <li><a [routerLink]="['/deleteFlightsPage']">Delete Flights</a></li>
+                        <li><a [routerLink]="['/viewAllFlightsPage']">View All Flights</a></li>
+                        <li><a [routerLink]="['/homePage']">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+
+
+        <section class="section-meals">
+            <ul class="meals-showcase clearfix">
+                <li>
+                    <figure class="meal-photo">
+                        <img src="/assets/img/1.jpg" alt="Korean bibimbap with egg and vegetables">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="/assets/img/2.jpg" alt="Korean222 bibimbap with egg and vegetables">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="/assets/img/3.jpg" alt="Korean333 bibimbap with egg and vegetables">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="/assets/img/4.jpg" alt="Korean444 bibimbap with egg and vegetables">
+                    </figure>
+                </li>
+            </ul>
+            <ul class="meals-showcase clearfix">
+                <li>
+                    <figure class="meal-photo">
+                        <img src="/assets/img/5.jpg" alt="Korean 5555bibimbap with egg and vegetables">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="/assets/img/6.jpg" alt="Korean66666bibimbap with egg and vegetables">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="/assets/img/7.jpg" alt="Korean7777 bibimbap with egg and vegetables">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="/assets/img/8.jpg" alt="Korean8888 bibimbap with egg and vegetables">
+                    </figure>
+                </li>
+            </ul>
+        </section>
+
+
+
+        
+
+        <section class="section-features" id="updates">
+            <div class="row">
+                <h2>Latest Updates</h2>
+            </div>
+            
+
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>
+        <div class="client row">
+            <div class="col-lg-4 col-md-12 client-img">
+                <img src="/assets/img/t1.JPG" alt="skvm flight image" >
+            </div>
+                <div class="col-lg-8 col-md-12 about-client">
+                    <h4 class="text-uppercase">Flight 1001</h4>
+                    <p class="para">This flight is scheduled at 10am from Mumbai to Pune.</p>
+                </div>
+        </div>
+    </ng-template>  
+    <ng-template carouselSlide>
+        <div class="client row">
+            <div class="col-lg-4 col-md-12 client-img">
+                <img src="/assets/img/t2.JPG" alt="skvm flight image" >
+            </div>
+                <div class="col-lg-8 col-md-12 about-client">
+                    <h4 class="text-uppercase">Flight 1002</h4>
+                        <p class="para">This flight updated timings of dept from 8pm to 10pm.</p>
+                </div>
+        </div>
+    </ng-template>  
+    <ng-template carouselSlide>
+        <div class="client row">
+            <div class="col-lg-4 col-md-12 client-img">
+                <img src="/assets/img/t3.JPG" alt="skvm flight image" >
+            </div>
+                <div class="col-lg-8 col-md-12 about-client">
+                    <h4 class="text-uppercase">Flight 1023</h4>
+                    <p class="para">This is newly added flight.</p>
+                </div>
+        </div>
+    </ng-template>
+    <ng-template carouselSlide>
+        <div class="client row">
+            <div class="col-lg-4 col-md-12 client-img">
+                <img src="/assets/img/t4.JPG" alt="skvm flight image" >
+            </div>
+                <div class="col-lg-8 col-md-12 about-client">
+                    <h4 class="text-uppercase">Flight 1902</h4>
+                    <p class="para">This flight doesnt exist.</p>
+                </div>
+        </div>
+    </ng-template>
+    <ng-template carouselSlide>
+        <div class="client row">
+            <div class="col-lg-4 col-md-12 client-img">
+                <img src="/assets/img/t5.JPG" alt="skvm flight image" >
+            </div>
+                <div class="col-lg-8 col-md-12 about-client">
+                    <h4 class="text-uppercase">Flight 1087</h4>
+                    <p class="para">This flight has been cancelled.</p>
+                </div>
+        </div>
+    </ng-template>
+  </owl-carousel-o>
+                   
+ </section>   
