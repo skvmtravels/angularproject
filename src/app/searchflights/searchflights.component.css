@@ -24,6 +24,9 @@
 	border-radius: 6px;
 }
 
+.switch{
+	background-color: transparent;
+}
 .booking-form .form-group {
 	position: relative;
 }

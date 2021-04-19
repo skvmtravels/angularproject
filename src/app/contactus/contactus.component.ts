@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Contactus } from '../contactus';
+
 
 @Component({
   selector: 'app-contactus',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactusComponent implements OnInit {
 
+  contactus:Contactus=new Contactus();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+sendMsg(contactusForm){
+  if(contactusForm.valid){
+    console.log(this.contactus);
+    alert("Form Submitted... Wait for Email");
+  }
+  else{
+    alert("Please fill details again.")
+  }
+}
 }

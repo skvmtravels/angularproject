@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Flight } from '../flight';
 import { FlightServiceService } from '../flight-service.service';
+import { SearchFlight } from '../search-flight';
 
 @Component({
   selector: 'app-show-searched-flights',
@@ -10,17 +11,24 @@ import { FlightServiceService } from '../flight-service.service';
 export class ShowSearchedFlightsComponent implements OnInit {
 
   flights:Flight[];
-  fromCity:string;
-  toCity:string;
+  searchF= new SearchFlight();
+  // fromCity:string;
+  // toCity:string;
+  // dateT:string;
 
   constructor(private service:FlightServiceService) { }
 
   ngOnInit(): void {
-    this.fromCity=this.service.fromCityData;
-    this.toCity=this.service.toCityData;
-    this.service.searchFlight(this.fromCity,this.toCity).subscribe(
+    this.searchF.fromCity=this.service.fromCityData;
+    this.searchF.toCity=this.service.toCityData;
+    this.searchF.dateT=this.service.dateTdata;
+
+    this.service.searchFlight(this.searchF).subscribe(
       showFlights=>{
         this.flights=showFlights;
+        console.log(this.searchF.fromCity);
+        console.log(this.searchF.toCity);
+        console.log(this.searchF.dateT);
       }
     );
   }

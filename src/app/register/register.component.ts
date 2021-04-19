@@ -19,17 +19,24 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  regUser():void
-  {
-    this.service.registerUser(this.user).subscribe(
-      userAdded=>{
-        console.log(userAdded);
-        if(userAdded)
-        {
-          this.router.navigate(['/loginPage'])
+  checkRegister(regform){
+    if(regform.valid){
+      console.log(this.user);
+      this.service.registerUser(this.user).subscribe(
+        userAdded=>{
+          console.log(userAdded);
+          if(userAdded)
+          {
+            this.router.navigate(['/loginPage'])
+          }
         }
-      }
-    );
+      );
+      //alert("Form Submitted... Wait for Registered Email");
+    }
+    else{
+      alert("Please fill details again.")
+    }
   }
+
   
 }

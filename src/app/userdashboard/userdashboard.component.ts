@@ -14,6 +14,7 @@ export class UserdashboardComponent implements OnInit {
 
   userEmail:string;
   user:User=new User();
+  userId:number;
 
   ngOnInit(): void {
 
@@ -22,6 +23,7 @@ export class UserdashboardComponent implements OnInit {
       fetchedUser=>{
         console.log(JSON.stringify(fetchedUser));
         this.user=fetchedUser;
+        localStorage.setItem("userId",this.user.user_id.toString());
       }
     );
 

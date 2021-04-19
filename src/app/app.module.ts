@@ -30,6 +30,8 @@ import { UserpaymentComponent } from './userpayment/userpayment.component';
 import { UserticketprintComponent } from './userticketprint/userticketprint.component';
 import { HeaderComponent } from './header/header.component';
 import { ShowSearchedFlightsComponent } from './show-searched-flights/show-searched-flights.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
@@ -67,7 +69,8 @@ import { ShowSearchedFlightsComponent } from './show-searched-flights/show-searc
     CarouselModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

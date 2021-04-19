@@ -8,7 +8,6 @@
 <br>
 <br>
 
-
 <div id="booking" class="section">
 		<div class="section-center">
 			<div class="container">
@@ -17,20 +16,41 @@
 						<form #searchForm="ngForm" (ngSubmit)="searchPlane()">
 							
 							<div class="row">
-								<div class="col-md-6">
+								<div class="col-md-5">
 									<div class="form-group">
 										<span class="form-label">Flying from</span>
 										<input class="form-control" type="text" placeholder="City or airport" name="fromCity" id="fromCity" #fromCity=ngModel [(ngModel)]=searchFlight.fromCity>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-5">
+									<div>
+										<button type="button" class="switch" (click)="switchInput(searchFlight.fromCity,searchFlight.toCity)"><i class="material-icons" style="color: #FFF;">&#xe8d5;</i></button>
+									</div>
+								</div>
+								<div class="col-md-5">
 									<div class="form-group">
 										<span class="form-label">Flying to</span>
 										<input class="form-control" type="text" placeholder="City or airport" name="toCity" id="toCity" #toCity=ngModel [(ngModel)]=searchFlight.toCity>
 									</div>
 								</div>
-							</div>
-								<div class="col-md-3">
+								<div class="col-md-5">
+                                    <div class="form-group">
+                                        <span class="form-label">No of Passengers</span>
+                                        <input class="form-control" type="number" placeholder="1" name="noOfPassengers" id="noOfPassengers" >
+                                    </div>
+                                </div>
+								<div class="col-md-5">
+									<div  class="form-group">
+										<span class="form-label">Departing</span>
+										<input class="form-control" type="date" name="dateT" id="dateT" #dateT=ngModel [(ngModel)]=searchFlight.dateT  [min]="minDate" [max]="maxDate">
+									</div>
+								</div> 
+								
+								
+                                
+                            </div>
+							
+								<div class="col-md-5">
 									<div class="form-btn">
 										<button type="submit" class="submit-btn">Show flights</button>
 									</div>

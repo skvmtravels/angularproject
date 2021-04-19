@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Flight } from './flight';
+import { SearchFlight } from './search-flight';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ export class FlightServiceService {
 
   fromCityData:string;
   toCityData:string;
+  dateTdata:string;
 
   constructor(private httpClient:HttpClient) { }
 
@@ -25,8 +27,8 @@ export class FlightServiceService {
     return this.httpClient.delete<void>("http://localhost:9090/deleteflight/"+flight_no);
   }
 
-  searchFlight(fromCity:string,toCity:string):Observable<Flight[]>{
-    return this.httpClient.get<Flight[]>("http://localhost:9090/searchflight/"+fromCity+"/"+toCity);
+  searchFlight(searchF:SearchFlight):Observable<Flight[]>{
+    return this.httpClient.post<Flight[]>("http://localhost:9090/searchflights",searchF);
   }
 
   updateFlight(flight:Flight):Observable<Flight>{

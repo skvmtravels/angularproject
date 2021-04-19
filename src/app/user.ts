@@ -1,12 +1,11 @@
 export class User {
-    title:string
-    firstName:string;
-    lastName:string;
-    password:string;
-    confirmPassword:string;
-    email:string;
-    dob:Date;
-    phoneNo:string;
-    wallet:number;
-    userId:number
+    user_id:number;
+	title:String;
+	firstName:String;
+	lastName:String;
+	password:String;
+	dob:Date;
+	email:String;
+	phoneNo:String;
+	wallet:DoubleRange;
 }

@@ -10,45 +10,59 @@
 </head>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" #contactusForm="ngForm" (ngSubmit)="sendMsg(contactusForm)">
 				<span class="contact100-form-title">
 					Send Us A Message
 				</span>
 
-				<label class="label-input100" for="first-name">Tell us your name *</label>
+				<label class="label-input100" for="first-name">Tell us your name</label>
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
-					<input id="first-name" class="input100" type="text" name="first-name" placeholder="First name">
+					<input id="first-name" class="input100" type="text" name="firstname" #firstname='ngModel' placeholder="First name" minlength="3" required [(ngModel)]="contactus.firstName">
 					<span class="focus-input100"></span>
+					<div *ngIf="(firstname.dirty||firstname.touched) && firstname.invalid" style="color: red;border-color: red;">
+						<div *ngIf="firstname.errors.required">Required Field</div>
+						<div *ngIf="firstname.errors.minlength">Name must be 3 letters</div>
+						</div>
 				</div>
-				<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
-					<input class="input100" type="text" name="last-name" placeholder="Last name">
+				<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name" required>
+					<input class="input100" type="text" name="lastname" placeholder="Last name" #lastname='ngModel' minlength="3" [(ngModel)]="contactus.lastName">
 					<span class="focus-input100"></span>
+					<div *ngIf="(lastname.dirty||lastname.touched) && lastname.invalid" style="color: red;border-color: red;">
+						<div *ngIf="lastname.errors.required">Required Field</div>
+						<div *ngIf="lastname.errors.minlength">Name must be 3 letters</div>
+						</div>
 				</div>
 
-				<label class="label-input100" for="email">Enter your email *</label>
+				<label class="label-input100" for="email">Enter your email</label>
 				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
+					<input id="email" class="input100" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9-]+\.[a-z]{2,4}$" [(ngModel)]="contactus.email" placeholder="Eg. example@email.com" #email='ngModel' required>
 					<span class="focus-input100"></span>
+					<div *ngIf="(email.dirty||email.touched) && email.invalid" style="color: red;border-color: red;">
+						<div *ngIf="email.errors.required"> Email is Required</div>
+						<div *ngIf="email.errors.pattern">Invalid Email</div>
+					   </div>
 				</div>
 
 				<label class="label-input100" for="phone">Enter phone number</label>
 				<div class="wrap-input100">
-					<input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +1 800 000000">
+					<input id="phone" class="input100" type="text" name="phone" #phone='ngModel' pattern="^[6-9]\d{9}$" [(ngModel)]="contactus.phone" placeholder="Eg. +1 800 000000" required>
 					<span class="focus-input100"></span>
+					<div *ngIf="phone.invalid && (phone.dirty||phone.touched)" style="color: red;">
+						<div *ngIf="phone.errors.required">Mobile no is required</div>
+						<div *ngIf="phone.errors.pattern">Mobile no is invalid</div>
+					  </div>
+
 				</div>
 
-				<label class="label-input100" for="message">Message *</label>
+				<label class="label-input100" for="message">Message </label>
 				<div class="wrap-input100 validate-input" data-validate = "Message is required">
-					<textarea id="message" class="input100" name="message" placeholder="Write us a message"></textarea>
+					<textarea id="message" class="input100" name="message" placeholder="Write us a message" #msg='ngModel' required [(ngModel)]="contactus.msg"></textarea>
 					<span class="focus-input100"></span>
+					<div *ngIf="msg.invalid && (msg.dirty||msg.touched)" style="color: red;">
+						<div *ngIf="msg.errors.required">Message is required</div>
+					</div>
 				</div>
 
 				<div class="container-contact100-form-btn">
@@ -105,9 +119,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-
      <br>
 	 <br>
 	 <br>

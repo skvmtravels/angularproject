@@ -29,6 +29,10 @@ export class UserServiceService {
     return this.httpClient.get<User>("http://localhost:9090/email/"+email);
   }
 
+  updateUser(user:User,userId:number):Observable<User>{
+    return this.httpClient.put<User>("http://localhost:9090/updateusers/"+userId,user);
+  }
+
   validAdmin(loginUser:Loginuser):Observable<Boolean>
   {
     return this.httpClient.post<Boolean>("http://localhost:9090/loginadmin",loginUser);

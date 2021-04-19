@@ -1,4 +1,4 @@
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -247,13 +247,17 @@
         <h2>We're happy to hear from you</h2>
     </div>
     <div class="row">
-        <form method="post" action="#" class="contact-form">
+        <form #feedbackForm="ngForm" (ngSubmit)="sendFeedback(feedbackForm)">
             <div class="row">
                 <div class="col span-1-of-3">
                     <label for="name">Name</label>
                 </div>
                 <div class="col span-2-of-3">
-                    <input type="text" name="name" id="name" placeholder="Your Name" required>
+                    <input id="name" type="text" name="name" #name='ngModel' placeholder="Name" minlength="3" required [(ngModel)]="feedback.name">
+					<div *ngIf="(name.dirty||name.touched) && name.invalid" style="color: red;border-color: red;">
+						<div *ngIf="name.errors.required">Required Field</div>
+						<div *ngIf="name.errors.minlength">Name must be 3 letters</div>
+						</div>
                 </div>                        
             </div>
             <div class="row">
@@ -261,7 +265,11 @@
                     <label for="email">Email</label>
                 </div>
                 <div class="col span-2-of-3">
-                    <input type="email" name="email" id="email" placeholder="Your email" required>
+                    <input id="email" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9-]+\.[a-z]{2,4}$" [(ngModel)]="feedback.email" placeholder="Eg. example@email.com" #email='ngModel' required>
+					<div *ngIf="(email.dirty||email.touched) && email.invalid" style="color: red;border-color: red;">
+						<div *ngIf="email.errors.required"> Email is Required</div>
+						<div *ngIf="email.errors.pattern">Invalid Email</div>
+					   </div>
                 </div>                        
             </div>
             <div class="row">
@@ -279,7 +287,7 @@
             </div>
             <div class="row">
                 <div class="col span-1-of-3">
-                    <label>Newsletter?</label>
+                    <label>Subscribe Newsletter to access our blogs</label>
                 </div>
                 <div class="col span-2-of-3">
                     <input type="checkbox" name="news" id="news" checked> Yes, please
@@ -290,7 +298,11 @@
                     <label>Drop us a line</label>
                 </div>
                 <div class="col span-2-of-3">
-                    <textarea name="message" placeholder="Your msg"></textarea>
+                    <textarea id="msg" name="msg" placeholder="Write us a message" #msg='ngModel' required [(ngModel)]="feedback.msg"></textarea>
+					<span class="focus-input100"></span>
+					<div *ngIf="msg.invalid && (msg.dirty||msg.touched)" style="color: red;">
+						<div *ngIf="msg.errors.required">Message is required</div>
+					</div>
                 </div>                        
             </div>
             <div class="row">
@@ -298,7 +310,7 @@
                     <label>&nbsp;</label>
                 </div>
                 <div class="col span-2-of-3">
-                    <input [routerLink]="['/contactUsPage']" type="submit" value="Send it!">
+                    <button type="submit">Send it!</button>
                 </div>                        
             </div>
         </form>
