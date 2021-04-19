@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { User } from '../user';
+import { UserServiceService } from '../user-service.service';
 
 
 @Component({
@@ -9,20 +12,24 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  user:User=new User();
+  
+  constructor(private service:UserServiceService,private router:Router) { }
 
   ngOnInit(): void {
   }
 
-  regUser(regForm:NgForm)
+  regUser():void
   {
-    if(regForm.valid)
-    {
-      alert("Successfully Registered");
-    }
-    else
-    {
-      alert("Invalid Data Entry")
-    }
+    this.service.registerUser(this.user).subscribe(
+      userAdded=>{
+        console.log(userAdded);
+        if(userAdded)
+        {
+          this.router.navigate(['/loginPage'])
+        }
+      }
+    );
   }
+  
 }

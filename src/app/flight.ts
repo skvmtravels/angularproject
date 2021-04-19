@@ -7,6 +7,7 @@ export class Flight {
     toCity:string;
     depTime:string;
     arrTime:string;
+    dateT:string;
     ticketPrice:number;
     capacity:number;
 
