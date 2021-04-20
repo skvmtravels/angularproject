@@ -11,6 +11,31 @@
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
   </head>
 
+  <header>
+    <nav>
+        <div class="row">
+            <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+            <ul class="main-nav">
+                <li><a [routerLink]="['/homePage']">Home</a></li>
+                <li><a [routerLink]="['/aboutUsPage']">About Us</a></li>
+                <li><a [routerLink]="['/searchFlightsPage']">Flights</a></li>
+                <li><a [routerLink]="['/registerPage']">Register</a></li>
+                <li><a [routerLink]="['/loginPage']">Login</a></li>
+                <li><a [routerLink]="['/contactUsPage']">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <h1>Love at first flight.<br>Cheapest flights in India.</h1>
+        <!-- <h2 style="color: whitesmoke; float: left;">Airplane mode: ON.</h2> -->
+        <a class="btn btn-full" [routerLink]="['/searchFlightsPage']">Search Flights</a>
+        <a class="btn btn-ghost" [routerLink]="['/aboutUsPage']">Show me more</a>
+    </div>
+</header>
  
     <!---Welcome/about section-->
 <section class="about-section mt-5">
