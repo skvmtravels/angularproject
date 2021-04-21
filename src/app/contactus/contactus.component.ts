@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Contactus } from '../contactus';
-
+import { Contactus } from "../contactus";
+import { UserServiceService } from '../user-service.service';
 
 @Component({
   selector: 'app-contactus',
@@ -10,7 +10,7 @@ import { Contactus } from '../contactus';
 export class ContactusComponent implements OnInit {
 
   contactus:Contactus=new Contactus();
-  constructor() { }
+  constructor(private service:UserServiceService) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +18,12 @@ export class ContactusComponent implements OnInit {
 sendMsg(contactusForm){
   if(contactusForm.valid){
     console.log(this.contactus);
+    this.service.getContactus(this.contactus).subscribe(
+      contact => 
+      console.log(contact)
+      //this.contactus = contact
+
+      );
     alert("Form Submitted... Wait for Email");
   }
   else{

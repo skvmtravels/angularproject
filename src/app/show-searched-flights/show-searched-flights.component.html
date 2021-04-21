@@ -34,6 +34,9 @@
                                     <td>{{flight.arrTime}}</td>
                                     <td>{{flight.ticketPrice}}</td>
                                     <td>{{flight.capacity}}</td>
+                                    <td>
+                                        <button type="button" (click)="bookFlight(flight.flight_no)">Book</button>
+                                    </td>
                                 </tr>
                                 
                             </table>

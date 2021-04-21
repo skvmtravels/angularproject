@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Contactus } from './contactus';
+import { Feedback } from './feedback';
 import { Observable } from 'rxjs';
 import { Loginuser } from './loginuser';
 import { User } from './user';
@@ -36,5 +38,13 @@ export class UserServiceService {
   validAdmin(loginUser:Loginuser):Observable<Boolean>
   {
     return this.httpClient.post<Boolean>("http://localhost:9090/loginadmin",loginUser);
+  }
+
+  getFeedback(feedback:Feedback):Observable<Feedback>{
+    return this.httpClient.post<Feedback>("http://localhost:9090/getFeedback",feedback);
+  }
+
+  getContactus(contactus:Contactus):Observable<Contactus>{
+    return this.httpClient.post<Contactus>("http://localhost:9090/getContactUs",contactus);
   }
 }

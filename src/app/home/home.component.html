@@ -299,10 +299,10 @@
             </div>
             <div class="row">
                 <div class="col span-1-of-3">
-                    <label for="find-us">How did you find us?</label>
+                    <label for="reference">How did you find us?</label>
                 </div>
                 <div class="col span-2-of-3">
-                    <select name="find-us" id="find-us">
+                    <select name="reference" id="reference" #reference='ngModel' [(ngModel)]="feedback.reference">
                         <option value="friends" selected>Friends</option>
                         <option value="search">Search engine</option>
                         <option value="ad">Ads</option>
@@ -315,7 +315,7 @@
                     <label>Subscribe Newsletter to access our blogs</label>
                 </div>
                 <div class="col span-2-of-3">
-                    <input type="checkbox" name="news" id="news" checked> Yes, please
+                    <input type="checkbox" name="subscription" id="subscription" #subscription='ngModel' [(ngModel)]="feedback.subscription" checked> Yes, please
                 </div>                        
             </div>
             <div class="row">

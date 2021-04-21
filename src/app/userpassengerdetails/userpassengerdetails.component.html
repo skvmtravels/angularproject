@@ -27,6 +27,8 @@
             <div class="form-group col-md-4">
                 <label>Passenger First Name</label>
                 <input type="text" class="form-control" name="firstName{{i}}" [(ngModel)]="obj.firstName">
+                {{i}}
+                {{obj.firstName}}
             </div>
             <div class="form-group col-md-4">
                 <label>Passenger Last Name</label>
@@ -42,10 +44,6 @@
                     <option value="male" name="male">Male</option>
                     <option value="female" name="female">Female</option>
                   </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label>Passenger DOB</label>
-                <input type="date" class="form-control">
             </div>
             <div class="form-group col-md-4">
                 <label>Adult/Child</label>

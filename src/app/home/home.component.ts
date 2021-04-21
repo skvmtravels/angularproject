@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Feedback } from '../feedback';
+import { UserServiceService } from '../user-service.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
 
 
   feedback:Feedback=new Feedback();
-  constructor() { }
+  constructor(private service:UserServiceService) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +20,9 @@ export class HomeComponent implements OnInit {
   sendFeedback(feedbackForm){
     if(feedbackForm.valid){
       console.log(this.feedback);
+      this.service.getFeedback(this.feedback).subscribe(
+        feeds => this.feedback = feeds
+      );
       alert("Form Submitted... Wait for Email");
     }
     else{

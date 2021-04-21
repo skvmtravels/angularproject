@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   checkLogin(loginForm){
     if(loginForm.valid){
-      console.log(this.user);
+      //console.log(this.user);
       this.service.validUser(this.loginuser).subscribe(
         isValid=>{
           if(isValid)
@@ -33,12 +33,13 @@ export class LoginComponent implements OnInit {
           }
           else{
             this.service.validAdmin(this.loginuser).subscribe(
-              isAdmValid=>{
-                if(isAdmValid)
+              isAdminValid=>{
+                if(isAdminValid)
                 {
                   this.router.navigate(['/adminDashboardPage']);
                 }
                 else{
+                  console.log(isAdminValid);
                   alert("Enter Valid Credentials");
                   this.router.navigate(['/loginPage']);
                 }

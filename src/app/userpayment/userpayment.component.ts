@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BookingServiceService } from '../booking-service.service';
 
 @Component({
   selector: 'app-userpayment',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserpaymentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bookService:BookingServiceService) { }
 
   ngOnInit(): void {
+   console.log( this.bookService.seatData);
   }
 
 }
