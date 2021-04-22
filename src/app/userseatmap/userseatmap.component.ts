@@ -140,11 +140,11 @@ export class UserseatmapComponent implements OnInit {
 
     
 
-    // setTimeout( ()=>{
-    //   this.router.navigate(['/userPaymentPage']);
-    //   }, 200)
+    setTimeout( ()=>{
+      this.router.navigate(['/userPaymentPage']);
+      }, 200)
     
-    //  this.router.navigate(['/userPaymentPage']);
+     
     
     
 

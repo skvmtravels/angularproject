@@ -37,12 +37,22 @@ export class UserpassengerdetailsComponent implements OnInit {
   onSubmit(){
     if(this.dataArray.length==this.bookService.noOfPassengersData){
       console.log("okok");
+      this.bookService.passengerIdData=50001;
       for(this.i=0;this.i<this.bookService.noOfPassengersData;this.i++){
         this.passenger=this.dataArray[this.i];
+
         console.log(this.passenger);
         this.bookService.addPassenger(this.passenger).subscribe(
           addPass=>{
-            console.log(addPass);            
+            console.log(addPass);     
+            
+            if(addPass.passenger_id >= this.bookService.passengerIdData){
+              this.bookService.passengerIdData=addPass.passenger_id;
+              console.log("ppid"+this.bookService.passengerIdData);
+            }            
+            
+            console.log("ppid"+this.bookService.passengerIdData);
+            console.log("pid"+addPass.passenger_id);       
             if(addPass){
               this.router.navigate(['/userSeatMapPage']);
             }

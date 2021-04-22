@@ -32,7 +32,7 @@ export class ShowSearchedFlightsComponent implements OnInit {
     this.toCity=this.service.toCityData;
     this.dateT=this.service.dateTdata;
 
-    this.service.searchFlight(this.fromCity,this.toCity).subscribe(
+    this.service.searchFlight(this.fromCity.toLowerCase(),this.toCity.toLowerCase()).subscribe(
       sflight=>{
         this.flights=sflight;
         console.log(sflight);
@@ -60,6 +60,8 @@ export class ShowSearchedFlightsComponent implements OnInit {
       bookingAdded=>{
         console.log(bookingAdded);
         if(bookingAdded){
+          console.log(bookingAdded.booking_id);
+          this.bookService.bookingIdData=bookingAdded.booking_id;
           this.router.navigate(['/userPassengerDetailsPage']);
         }
       }

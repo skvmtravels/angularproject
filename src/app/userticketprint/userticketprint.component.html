@@ -30,17 +30,16 @@
     <br>
     <br>
     <br>
-    <h3>Booking ID: </h3>
+    <h3>Booking ID: {{bookService.bookingIdData}}</h3>
     <br>
 
     <h3 style="text-decoration: underline;">Your Flight Details are here:  </h3>
     <br>
-    <h3>Flight ID: </h3>
-    <h3>Source: </h3>
-    <h3>Destination: </h3>
-    <h3>Departure Date: </h3>
-    <h3>Departure Time: </h3>
-    <h3>Arrival Time: </h3>
+    <h3>Flight ID: {{flight.flight_no}}</h3>
+    <h3>Source: {{flight.fromCity}}</h3>
+    <h3>Destination: {{flight.toCity}}</h3>
+    <h3>Departure Time: {{flight.depTime}}</h3>
+    <h3>Arrival Time: {{flight.arrTime}}</h3>
     <br>
     <br>
     <h2>You can View your details here:</h2>
@@ -49,36 +48,47 @@
     <tr class="head">
         <th>Dept. Date</th>
         <th>Dept. Time</th>
+        <th>Seat Number</th>
+        <th>Ticket Price</th>
+    </tr>
+    <tr *ngFor="let ticket of tickets">
+        
+        
+        <td>{{ticket.travelDate}}</td>
+        <td>{{flight.depTime}}</td>
+        <td>{{ticket.seatNo}}</td>
+        <td>{{flight.ticketPrice}}</td>
+          
+       
+    </tr>
+    
+</table>
+<br>
+<br>
+<br>
+<table style="table-layout:fixed;width:100%;font-size: medium;" >
+    <tr class="head">
+        
         <th>Passenger First Name</th>
         <th>Passenger Last Name</th>
         <th>Passenger Age</th>
         <th>Passenger Gender</th>
         <th>Adult/Child</th>
-        <th>Seat Number</th>
-        <th>Ticket Price</th>
     </tr>
-    <tr>
-        <td>01/04/2021</td>
-        <td>09:30</td>
-        <td>Jack</td>
-        <td>Williams</td>
-        <td>30</td>
-        <td>Male</td>
-        <td>Adult</td>
-        <td>7B</td>
-        <td>2000</td>
+    <tr *ngFor="let passenger of passengers">
+        
+        
+        
+        <td>{{passenger.firstName}}</td>
+        <td>{{passenger.lastName}}</td>
+        <td>{{passenger.age}}</td>
+        <td>{{passenger.gender}}</td>
+        <td>{{passenger.adultOrChild}}</td>
+        
+          
+       
     </tr>
-    <tr>
-      <td>01/04/2021</td>
-      <td>09:30</td>
-      <td>Jenny</td>
-      <td>Williams</td>
-      <td>29</td>
-      <td>Female</td>
-      <td>Adult</td>
-      <td>7C</td>
-      <td>2000</td>
-  </tr>
+    
 </table>
 </div>
 

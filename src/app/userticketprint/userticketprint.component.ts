@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import  jspdf from 'jspdf'
 import html2canvas from 'html2canvas'
+import { FlightServiceService } from '../flight-service.service';
+import { Flight } from '../flight';
+import { BookingServiceService } from '../booking-service.service';
+import { Ticket } from '../ticket';
+import { Passenger } from '../passenger';
 
 @Component({
   selector: 'app-userticketprint',
@@ -9,9 +14,31 @@ import html2canvas from 'html2canvas'
 })
 export class UserticketprintComponent implements OnInit {
 
-  constructor() { }
+  flight=new Flight();
+  tickets:Ticket[];
+  passengers:Passenger[];
+  constructor(private flightService:FlightServiceService,public bookService:BookingServiceService) { }
+  
 
   ngOnInit(): void {
+    this.bookService.findFlightById(this.bookService.flightNoData).subscribe(
+      findFlight=>{
+        this.flight=findFlight;
+      }
+    );
+
+    this.bookService.findTicketByBookingId(this.bookService.bookingIdData).subscribe(
+      findTickets=>{
+        this.tickets=findTickets;
+        
+      }
+    );
+
+    this.bookService.findPassByBookingId(this.bookService.bookingIdData).subscribe(
+      findpasseng=>{
+        this.passengers=findpasseng;
+      }
+    );
   }
 
   
