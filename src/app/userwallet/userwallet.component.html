@@ -1,0 +1,86 @@
+<div class="header" style="background-image: url('/assets/images/register.JPG'); height:50vh; background-repeat: no-repeat; background-size:cover;">
+    <img src="/assets/images/user.gif" alt="omnifood logo" class="logo">
+    <div class="header-right">
+      <ul class="main-nav">
+        <li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
+        <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
+        <li><a [routerLink]="['/searchFlightsPage']">Flights</a></li>
+        <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
+        <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
+        <li><a [routerLink]="['/userWalletPage']">Wallet</a></li>
+        <li><a [routerLink]="['/homePage']">Logout</a></li>
+    </ul>
+    </div>
+  </div>
+
+<br>  
+<br>
+<br>
+
+<h2>Wallet Details..</h2>
+<br>
+<br>
+<div>
+    <div>
+        <h3>Available Balance: {{user.wallet}} </h3>
+    </div>
+    <br>
+    <br>
+    <br>
+    <form #walletForm="ngForm" (ngSubmit)="rechargeWallet(walletForm)">
+        <div>
+            <label for="wname">Name of User (As per Wallet)</label><br>
+            <input type="text" placeholder="Name of User" id="wname" name="wname" #wname='ngModel' minlength="3" required [(ngModel)]="wallet.wname"><br>
+                <div *ngIf="(wname.dirty||wname.touched) && wname.invalid" style="color: red;border-color: red;">
+                    <div *ngIf="wname.errors.required">Required Field</div>
+                    <div *ngIf="wname.errors.minlength">Name must be 3 letters</div>
+                </div>
+        </div>                        
+        
+        <div >
+            
+                <label for="wnum">Wallet number</label><br>
+                
+                <input type="number" id="wnum" name="wnum" #wnum='ngModel' placeholder="Wallet Number" minlength="8" maxlength="8" [(ngModel)]="wallet.number" required><br>
+                <div *ngIf="(wnum.dirty||wnum.touched) && wnum.invalid" style="color: red;border-color: red;">
+                    <div *ngIf="wnum.errors.required"> Wallet Number is Required</div>
+                    <div *ngIf="wnum.errors.minlength">Invalid Wallet Number</div>
+                    <div *ngIf="wnum.errors.maxlength">Invalid Wallet Number</div>
+                   </div>
+            </div>                        
+    
+        <div >
+                 <label for="expmonth">Exp Month</label><br>
+                <input type="month" id="expmonth" name="expmonth" #expmonth='ngModel'  [(ngModel)]="wallet.expmonth" required ><br>
+                <div *ngIf="(expmonth.dirty||expmonth.touched) && expmonth.invalid" style="color: red;border-color: red;">
+                    <div *ngIf="expmonth.errors.required"> Exp Month is Required</div>
+                    </div>
+            </div>                        
+            <div >
+            
+                <label for="pin">Wallet Pin</label><br>
+                <input type="password" id="pin" name="pin" #pin='ngModel' placeholder="Wallet Pin" minlength="4" maxlength="4" [(ngModel)]="wallet.pin" required><br>
+                <div *ngIf="(pin.dirty||pin.touched) && pin.invalid" style="color: red;border-color: red;">
+                    <div *ngIf="pin.errors.required"> Wallet pin is Required</div>
+                    <div *ngIf="pin.errors.minlength">Invalid Wallet Pin</div>
+                    <div *ngIf="pin.errors.maxlength">Invalid Wallet Pin</div>
+                   </div>
+            </div>                        
+        
+
+        <div >
+            
+                <label for="wallet">Amount to be added in wallet</label><br>
+               <input type="number" id="wallet" name="wallet" #wallet='ngModel' placeholder="Amount to be recharged" [(ngModel)]="user.wallet" required><br>
+                <div *ngIf="(wallet.dirty||wallet.touched) && wallet.invalid" style="color: red;border-color: red;">
+                    <div *ngIf="wallet.errors.required"> Amount has to be entered</div>
+                </div>      
+                                    
+        </div>
+        <div style="text-align: center;">
+            
+                <button type="submit" style="width: 150px; height: 70px;">Recharge Wallet</button>
+                                    
+        </div>
+    </form>
+</div>

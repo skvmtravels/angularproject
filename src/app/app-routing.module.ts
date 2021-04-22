@@ -25,6 +25,8 @@ import { UserpassengerdetailsComponent } from './userpassengerdetails/userpassen
 import { UserpaymentComponent } from './userpayment/userpayment.component';
 import { UserticketprintComponent } from './userticketprint/userticketprint.component';
 import { ShowSearchedFlightsComponent } from './show-searched-flights/show-searched-flights.component';
+import { UserwalletComponent } from './userwallet/userwallet.component';
+import { UserviewticketComponent } from './userviewticket/userviewticket.component';
 
 const routes: Routes = [
   {​​​​​​​
@@ -95,6 +97,12 @@ const routes: Routes = [
   },
   {
     path:'showSearchedFlights',component:ShowSearchedFlightsComponent
+  },
+  {
+    path:'userWalletPage',component:UserwalletComponent
+  },
+  {
+    path:'userViewTicketPage',component:UserviewticketComponent
   }
 ];
 

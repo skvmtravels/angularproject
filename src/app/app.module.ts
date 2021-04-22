@@ -31,6 +31,8 @@ import { UserticketprintComponent } from './userticketprint/userticketprint.comp
 import { HeaderComponent } from './header/header.component';
 import { ShowSearchedFlightsComponent } from './show-searched-flights/show-searched-flights.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserwalletComponent } from './userwallet/userwallet.component';
+import { UserviewticketComponent } from './userviewticket/userviewticket.component';
 
 
 
@@ -61,6 +63,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UserticketprintComponent,
     HeaderComponent,
     ShowSearchedFlightsComponent,
+    UserwalletComponent,
+    UserviewticketComponent,
 
     ],
   imports: [

@@ -17,6 +17,7 @@ export class BookingServiceService {
   passengerIdData;
   flightNoData:number;
   bookingIdData:number;
+  bookingIdForViewTicketData:number;
 
   constructor(private httpClient:HttpClient) { }
 
@@ -53,5 +54,29 @@ export class BookingServiceService {
 
   findTicketSeats(flight_no:number):Observable<Ticket[]>{
     return this.httpClient.get<Ticket[]>("http://localhost:9090/findSeats/"+flight_no);
+  }
+
+  viewBookingByTrueStatus(user_id:number):Observable<Booking[]>{
+    return this.httpClient.get<Booking[]>("http://localhost:9090/bookandtick/"+user_id);
+  }
+
+  viewBookingByFalseStatus(user_id:number):Observable<Booking[]>{
+    return this.httpClient.get<Booking[]>("http://localhost:9090/bookandtickfalse/"+user_id);
+  }
+
+  cancelTickets(booking_id:number):Observable<void>{
+    return this.httpClient.put<void>("http://localhost:9090/changebookstatus/"+booking_id,booking_id);
+  }
+
+  findFlightByBookingId(booking_id:number):Observable<Flight>{
+    return this.httpClient.get<Flight>("http://localhost:9090/flightbybooking/"+booking_id);
+  }
+
+  viewAllTickets():Observable<Ticket[]>{
+    return this.httpClient.get<Ticket[]>("http://localhost:9090/viewallticks");
+  }
+
+  deleteOldTickets():Observable<void>{
+    return this.httpClient.get<void>("http://localhost:9090/deleteoldtickets");
   }
 }

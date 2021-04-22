@@ -16,35 +16,22 @@
   <table class="styled-table">
     <thead>
         <tr>
-            <th>Flight No</th>
-            <th>Dept. Time</th>
-            <th>Arrival Time</th>
-            <th>Duration</th>
-            <th>Dept. Date</th>
-            <th>No Of Passengers</th>
-            <th>Status</th>
+            <th>Booking Id</th>
+            <th>Number Of Passengers</th>
+            <th>Book Date</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1010</td>
-            <td>09.30</td>
-            <td>13.10</td>
-            <td>3.40</td>
-            <td>01/04/2021</td>
-            <td>2</td>
-            <td><button type="button">Cancel</button></td>
+        <tr *ngFor="let booking of bookings">
+            <td><a href="javascript:void(0);" (click)="viewticket(booking.booking_id)">{{booking.booking_id}}</a></td>
+            <td>{{booking.noOfPassengers}}</td>
+            <td>{{booking.bookDate}}</td>
+            
+            <td><button type="button" (click)="cancelticket(booking.booking_id)">Cancel</button></td>
             
         </tr>
-        <tr>
-          <td>1011</td>
-          <td>09.30</td>
-          <td>13.10</td>
-          <td>3.40</td>
-          <td>01/04/2021</td>
-          <td>2</td>
-          <td><button type="button">Cancel</button></td>
-      </tr>
+        
         <!-- and so on... -->
     </tbody>
   </table>

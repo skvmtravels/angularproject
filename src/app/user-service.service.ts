@@ -5,6 +5,7 @@ import { Feedback } from './feedback';
 import { Observable } from 'rxjs';
 import { Loginuser } from './loginuser';
 import { User } from './user';
+import { Walletdto } from './walletdto';
 
 @Injectable({
   providedIn: 'root'
@@ -46,5 +47,9 @@ export class UserServiceService {
 
   getContactus(contactus:Contactus):Observable<Contactus>{
     return this.httpClient.post<Contactus>("http://localhost:9090/getContactUs",contactus);
+  }
+
+  rechargeWallet(walletdto:Walletdto):Observable<Number>{
+    return this.httpClient.post<Number>("http://localhost:9090/rechargewallet",walletdto);
   }
 }
