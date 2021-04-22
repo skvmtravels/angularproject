@@ -1,90 +1,72 @@
 
-
-
-
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
-/* @font-face {
-  font-family: Poppins-Regular;
-  src: url('../assests/fonts/poppins/Poppins-Regular.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Medium;
-  src: url('../assests/fonts/poppins/Poppins-Medium.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Bold;
-  src: url('../assests/fonts/poppins/Poppins-Bold.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-SemiBold;
-  src: url('../assests/fonts/poppins/Poppins-SemiBold.ttf'); 
-}
-
-@font-face {
-  font-family: Montserrat-Bold;
-  src: url('../assests/fonts/montserrat/Montserrat-Bold.ttf'); 
-}
- */
-
-/*//////////////////////////////////////////////////////////////////
-[ RESTYLE TAG ]*/
-
-body {
-	font-family: Arial, Helvetica, sans-serif;
-	margin: 0;
-  }
-  
-  html {
+* {
+	margin: 0px; 
+	padding: 0px; 
 	box-sizing: border-box;
-  }
-  
-  *, *:before, *:after {
-	box-sizing: inherit;
-  }
-/* body, html {
+}
+
+body, html {
 	height: 100%;
 	font-family: Poppins-Regular, sans-serif;
-} */
+}
+
+body {
+	margin:  0;
+}
+
 header {
-	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url("src\assets/img/hero.jpg");
-	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("src\assets\img\hero.jpg");
-	background-size: cover; 
-	background-position: center;
-	 height: 30vh;
-	background-attachment: fixed;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))), url("/assets/img/background.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/assets/img/background.jpg");
+    background-size: cover; 
+    background-position: center;
+    height: 20vh;
+    background-attachment: fixed;
+    }
+       
+  .hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
   }
+  
+  .logo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+  }
+  
   .main-nav {
-	float: right;
-	list-style: none;
-	margin-top: 55px;
+    float: right;
+    list-style: none;
+    margin-top: 55px;
   }
   
   .main-nav li {
-	display: inline-block;
-	margin-left: 40px;
+    display: inline-block;
+    margin-left: 40px;
   }
   
   .main-nav li a:link,
   .main-nav li a:visited {
-	padding: 8px 0;
-	color:black;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 90%;
-	border-bottom: 2px solid transparent;
-	-webkit-transition: border-bottom 0.2s;
-	transition: border-bottom 0.2s;
+    padding: 8px 0;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
   }
   
   .main-nav li a:hover,
   .main-nav li a:active {
-	border-bottom: 2px solid #e67e22;
+    border-bottom: 2px solid #e67e22;
   }
+  
 
 /*---------------------------------------------*/
 a {

@@ -42,7 +42,7 @@ export class UserpassengerdetailsComponent implements OnInit {
         console.log(this.passenger);
         this.bookService.addPassenger(this.passenger).subscribe(
           addPass=>{
-            console.log(addPass);
+            console.log(addPass);            
             if(addPass){
               this.router.navigate(['/userSeatMapPage']);
             }

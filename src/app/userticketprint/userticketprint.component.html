@@ -19,20 +19,36 @@
 <br>
 <br>
 
-<h2>Confirm Your Details and Print Ticket</h2>
+<h2>Print your Ticket</h2>
 <br>
 <br>
 
+<button (click)="downloadPDF()">Download As PDF</button>
 
+<div id="table">
 
-<table class="styled-table"  style="table-layout:fixed;width:100%;font-size: small;">
-    <tr>
-        <th>Booking Id</th>
-        <th>From</th>
-        <th>To</th>
+    <br>
+    <br>
+    <br>
+    <h3>Booking ID: </h3>
+    <br>
+
+    <h3 style="text-decoration: underline;">Your Flight Details are here:  </h3>
+    <br>
+    <h3>Flight ID: </h3>
+    <h3>Source: </h3>
+    <h3>Destination: </h3>
+    <h3>Departure Date: </h3>
+    <h3>Departure Time: </h3>
+    <h3>Arrival Time: </h3>
+    <br>
+    <br>
+    <h2>You can View your details here:</h2>
+
+<table style="table-layout:fixed;width:100%;font-size: medium;" >
+    <tr class="head">
         <th>Dept. Date</th>
         <th>Dept. Time</th>
-        <th>Arrival Time</th>
         <th>Passenger First Name</th>
         <th>Passenger Last Name</th>
         <th>Passenger Age</th>
@@ -40,15 +56,10 @@
         <th>Adult/Child</th>
         <th>Seat Number</th>
         <th>Ticket Price</th>
-        <th>Ticket</th>
     </tr>
     <tr>
-        <td>1010</td>
-        <td>Mumbai</td>
-        <td>Pune</td>
         <td>01/04/2021</td>
         <td>09:30</td>
-        <td>13:10</td>
         <td>Jack</td>
         <td>Williams</td>
         <td>30</td>
@@ -56,15 +67,10 @@
         <td>Adult</td>
         <td>7B</td>
         <td>2000</td>
-        <td><button type="button">Print</button></td>
     </tr>
     <tr>
-      <td>1010</td>
-      <td>Mumbai</td>
-      <td>Pune</td>
       <td>01/04/2021</td>
       <td>09:30</td>
-      <td>13:10</td>
       <td>Jenny</td>
       <td>Williams</td>
       <td>29</td>
@@ -72,7 +78,7 @@
       <td>Adult</td>
       <td>7C</td>
       <td>2000</td>
-      <td><button type="button">Print</button></td>
   </tr>
-    <!-- and so on... -->
 </table>
+</div>
+

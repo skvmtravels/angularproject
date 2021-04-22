@@ -27,8 +27,12 @@ export class FlightServiceService {
     return this.httpClient.delete<void>("http://localhost:9090/deleteflight/"+flight_no);
   }
 
-  searchFlight(searchF:SearchFlight):Observable<Flight[]>{
-    return this.httpClient.post<Flight[]>("http://localhost:9090/searchflights",searchF);
+  // searchFlight(searchF:SearchFlight):Observable<Flight[]>{
+  //   return this.httpClient.post<Flight[]>("http://localhost:9090/searchflights",searchF);
+  // }
+
+  searchFlight(fromCity:string,toCity:string):Observable<Flight[]>{
+    return this.httpClient.get<Flight[]>("http://localhost:9090/searchflight/"+fromCity+"/"+toCity);
   }
 
   updateFlight(flight:Flight):Observable<Flight>{

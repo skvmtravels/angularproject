@@ -1,21 +1,27 @@
-/* header {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.7))), url(/assets/img/connor-jalbert-LERXSVYn4_I-unsplash.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(/assets/img/connor-jalbert-LERXSVYn4_I-unsplash.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    background-attachment: fixed;
-    
-  } */
-  /* header */
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
 
-  header {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7)));
-    background-size: cover;
+body, html {
+	height: 100%;
+	font-family: Poppins-Regular, sans-serif;
+}
+
+body {
+	margin:  0;
+}
+
+header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))), url("/assets/img/jerry-zhang-BvuZn3FhEdU-unsplash.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/assets/img/jerry-zhang-BvuZn3FhEdU-unsplash.jpg");
+    background-size: cover; 
     background-position: center;
+    height: 20vh;
     background-attachment: fixed;
-  }
-  
+    }
+       
   .hero-text-box {
     position: absolute;
     width: 1140px;
@@ -59,6 +65,11 @@
   .main-nav li a:active {
     border-bottom: 2px solid #e67e22;
   }
+  
+  form { 
+    margin: 0 auto; 
+    width:400px;
+    }
   
   /* features */
   

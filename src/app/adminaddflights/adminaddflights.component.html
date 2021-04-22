@@ -1,20 +1,24 @@
-
+<header>
     <nav>
         <div class="row">
             <a [routerLink]="['/adminDashboardPage']"><img src="/assets/img/admin.JPG" alt="Admin Logo" class="logo"></a>
             <ul class="main-nav">
                 <li><a [routerLink]="['/addFlightsPage']">Add Flights</a></li>
                 <li><a [routerLink]="['/updateFlightsPage']">Update Flights</a></li>
-                <li><a [routerLink]="['/deleteFlightsPage']">Delete Flights</a></li>
                 <li><a [routerLink]="['/viewAllFlightsPage']">View All Flights</a></li>
+                <li><a [routerLink]="['/viewAllBookingPage']">Bookings</a></li>
+                <li><a [routerLink]="['/viewAllUsersPage']">Users</a></li>
                 <li><a [routerLink]="['/homePage']">Logout</a></li>
             </ul>
         </div>
     </nav>
-
+</header>
+<br>
+<br>
+<br>
 
 <section class="section-form">
-    <div class="row">
+    <div>
         <div class="main">
             <div class="card">
             <h2 style="text-align: center;">Add Flight Details to be added..</h2>
@@ -42,10 +46,6 @@
                 <input type="time" placeholder="Enter Arrival Time" name="arrTime" id="arrTime" #arrTime=ngModel [(ngModel)]=flight.arrTime><br>
 
                 <br>
-                <label for="dateT"><b>Flight Date</b></label><br>
-                <input type="date" placeholder="Enter Flight Date" name="dateT" id="dateT" #dateT=ngModel [(ngModel)]=flight.dateT><br>
-
-                <br>
                 <label for="ticketPrice"><b>Ticket Price</b></label><br>
                 <input type="number" placeholder="Enter Ticket Price" name="ticketPrice" id="ticketPrice" #ticketPrice=ngModel [(ngModel)]=flight.ticketPrice><br>
 
@@ -54,7 +54,7 @@
                 <input type="number" placeholder="Enter Total Capacity" name="capacity" id="capacity" #capacity=ngModel [(ngModel)]=flight.capacity><br>
 
                 <br>
-                <button type="submit">Add Flight</button>
+                <button type="submit" style="width: 200px; height: 50px;">Add Flight</button>
                 </div>
             </form>
         </div>

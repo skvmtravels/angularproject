@@ -8,20 +8,24 @@
 
 </head>
 
-
+<header>
     <nav>
         <div class="row">
             <a [routerLink]="['/adminDashboardPage']"><img src="/assets/img/admin.JPG" alt="Admin Logo" class="logo"></a>
             <ul class="main-nav">
                 <li><a [routerLink]="['/addFlightsPage']">Add Flights</a></li>
                 <li><a [routerLink]="['/updateFlightsPage']">Update Flights</a></li>
-                <li><a [routerLink]="['/deleteFlightsPage']">Delete Flights</a></li>
                 <li><a [routerLink]="['/viewAllFlightsPage']">View All Flights</a></li>
+                <li><a [routerLink]="['/viewAllBookingPage']">Bookings</a></li>
+                <li><a [routerLink]="['/viewAllUsersPage']">Users</a></li>
                 <li><a [routerLink]="['/homePage']">Logout</a></li>
             </ul>
         </div>
     </nav>
-
+</header>
+<br>
+<br>
+<br>
 
 <section class="section-form">
     <div class="table-responsive">
@@ -30,7 +34,7 @@
                 <div class="main">
                     <div class="card">
                         <h2 style="text-align: center;">View All Flight Details..</h2>
-                            <table border="1">
+                            <table border="2">
                                 <th>Flight Number</th>
                                 <th>Source</th>
                                 <th>Destination</th>
