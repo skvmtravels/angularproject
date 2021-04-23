@@ -7,5 +7,5 @@ export class User {
 	dob:Date;
 	email:String;
 	phoneNo:String;
-	wallet:DoubleRange;
+	wallet:number;
 }

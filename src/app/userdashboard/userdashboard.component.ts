@@ -29,4 +29,9 @@ export class UserdashboardComponent implements OnInit {
 
   }
 
+  logout():void{
+    console.log("clearing.....")
+    localStorage.clear();
+  }
+
 }

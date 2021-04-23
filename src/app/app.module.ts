@@ -33,6 +33,7 @@ import { ShowSearchedFlightsComponent } from './show-searched-flights/show-searc
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserwalletComponent } from './userwallet/userwallet.component';
 import { UserviewticketComponent } from './userviewticket/userviewticket.component';
+import { AdminviewbookingsComponent } from './adminviewbookings/adminviewbookings.component';
 
 
 
@@ -65,6 +66,7 @@ import { UserviewticketComponent } from './userviewticket/userviewticket.compone
     ShowSearchedFlightsComponent,
     UserwalletComponent,
     UserviewticketComponent,
+    AdminviewbookingsComponent,
 
     ],
   imports: [

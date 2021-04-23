@@ -40,6 +40,10 @@ export class BookingServiceService {
     return this.httpClient.get<Flight>("http://localhost:9090/searchforbooking/"+flight_no);
   }
 
+  findBookinfById(booking_id:number):Observable<Booking>{
+    return this.httpClient.get<Booking>("http://localhost:9090/findbybookid/"+booking_id);
+  }
+
   findTicketByBookingId(booking_id:number):Observable<Ticket[]>{
     return this.httpClient.get<Ticket[]>("http://localhost:9090/searchticketforbooking/"+booking_id);
   }
@@ -78,5 +82,17 @@ export class BookingServiceService {
 
   deleteOldTickets():Observable<void>{
     return this.httpClient.get<void>("http://localhost:9090/deleteoldtickets");
+  }
+
+  viewAllBookingAdmin():Observable<Booking[]>{
+    return this.httpClient.get<Booking[]>("http://localhost:9090/viewadminbooking");
+  }
+
+  viewAllBookingAdminTrue():Observable<Booking[]>{
+    return this.httpClient.get<Booking[]>("http://localhost:9090/viewadminbookingtrue");
+  }
+
+  viewAllBookingAdminFalse():Observable<Booking[]>{
+    return this.httpClient.get<Booking[]>("http://localhost:9090/viewadminbookingfalse");
   }
 }

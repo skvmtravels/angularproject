@@ -129,6 +129,14 @@
     </div>
   </div>
 </div>
+<br><br>
+    <div class="inputBox">
+      <input type="password" #pwd='ngModel' pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" placeholder="Enter Password" name="psw" id="psw" required [(ngModel)]="loginuser.password"><br>
+      <div *ngIf="pwd.invalid && (pwd.dirty||pwd.touched)" style="color: red;">
+        <div *ngIf="pwd.errors.required">password is required</div>
+        <div *ngIf="pwd.errors.pattern">password is invalid</div>
+      </div>
+    </div>
 <button type="button" (click)="payment()">Pay</button>
 
  

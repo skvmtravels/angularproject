@@ -27,6 +27,7 @@ import { UserticketprintComponent } from './userticketprint/userticketprint.comp
 import { ShowSearchedFlightsComponent } from './show-searched-flights/show-searched-flights.component';
 import { UserwalletComponent } from './userwallet/userwallet.component';
 import { UserviewticketComponent } from './userviewticket/userviewticket.component';
+import { AdminviewbookingsComponent } from './adminviewbookings/adminviewbookings.component';
 
 const routes: Routes = [
   {​​​​​​​
@@ -103,6 +104,9 @@ const routes: Routes = [
   },
   {
     path:'userViewTicketPage',component:UserviewticketComponent
+  },
+  {
+    path:'adminViewBookingPage',component:AdminviewbookingsComponent
   }
 ];
 

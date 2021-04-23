@@ -52,4 +52,8 @@ export class UserServiceService {
   rechargeWallet(walletdto:Walletdto):Observable<Number>{
     return this.httpClient.post<Number>("http://localhost:9090/rechargewallet",walletdto);
   }
+
+  payment(walletdto:Walletdto):Observable<Number>{
+    return this.httpClient.post<Number>("http://localhost:9090/paywallet",walletdto); 
+  }
 }

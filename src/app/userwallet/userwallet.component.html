@@ -41,7 +41,7 @@
             
                 <label for="wnum">Wallet number</label><br>
                 
-                <input type="number" id="wnum" name="wnum" #wnum='ngModel' placeholder="Wallet Number" minlength="8" maxlength="8" [(ngModel)]="wallet.number" required><br>
+                <input type="text" id="wnum" name="wnum" #wnum='ngModel' placeholder="Wallet Number" minlength="8" maxlength="8" [(ngModel)]="wallet.number" required><br>
                 <div *ngIf="(wnum.dirty||wnum.touched) && wnum.invalid" style="color: red;border-color: red;">
                     <div *ngIf="wnum.errors.required"> Wallet Number is Required</div>
                     <div *ngIf="wnum.errors.minlength">Invalid Wallet Number</div>
@@ -50,12 +50,7 @@
             </div>                        
     
         <div >
-                 <label for="expmonth">Exp Month</label><br>
-                <input type="month" id="expmonth" name="expmonth" #expmonth='ngModel'  [(ngModel)]="wallet.expmonth" required ><br>
-                <div *ngIf="(expmonth.dirty||expmonth.touched) && expmonth.invalid" style="color: red;border-color: red;">
-                    <div *ngIf="expmonth.errors.required"> Exp Month is Required</div>
-                    </div>
-            </div>                        
+                                         
             <div >
             
                 <label for="pin">Wallet Pin</label><br>
@@ -82,5 +77,5 @@
                 <button type="submit" style="width: 150px; height: 70px;">Recharge Wallet</button>
                                     
         </div>
-    </form>
+
 </div>
