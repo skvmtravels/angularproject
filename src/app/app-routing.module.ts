@@ -28,6 +28,11 @@ import { ShowSearchedFlightsComponent } from './show-searched-flights/show-searc
 import { UserwalletComponent } from './userwallet/userwallet.component';
 import { UserviewticketComponent } from './userviewticket/userviewticket.component';
 import { AdminviewbookingsComponent } from './adminviewbookings/adminviewbookings.component';
+import { AdminviewusersComponent } from './adminviewusers/adminviewusers.component';
+import { AdminviewticketComponent } from './adminviewticket/adminviewticket.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { VerifyotpComponent } from './verifyotp/verifyotp.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
 const routes: Routes = [
   {​​​​​​​
@@ -107,6 +112,21 @@ const routes: Routes = [
   },
   {
     path:'adminViewBookingPage',component:AdminviewbookingsComponent
+  },
+  {
+    path:'viewAllUsersPage',component:AdminviewusersComponent
+  },
+  {
+    path:'viewAdminTicket',component:AdminviewticketComponent
+  },
+  {
+    path:'forgotPasswordPage',component:ForgotpasswordComponent
+  },
+  {
+    path:'verifyOtpPage',component:VerifyotpComponent
+  },
+  {
+    path:'changePasswordPage',component:ChangepasswordComponent
   }
 ];
 

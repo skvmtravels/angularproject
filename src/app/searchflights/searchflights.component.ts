@@ -27,7 +27,8 @@ export class SearchflightsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  searchPlane():void{
+  searchPlane(searchForm):void{
+    
     this.service.fromCityData=this.searchFlight.fromCity;
     this.service.toCityData=this.searchFlight.toCity;
     this.service.dateTdata=this.searchFlight.dateT;

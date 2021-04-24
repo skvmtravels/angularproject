@@ -1,17 +1,18 @@
 <header>
-    <nav>
-        <div class="row">
-            <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
-            <ul class="main-nav">
-				<li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
-                <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
-                <li><a [routerLink]="['/userSearchFlightsPage']">Flights</a></li>
-                <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
-                <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
-				<li><a [routerLink]="['/homePage']">Logout</a></li>
-            </ul>
-        </div>
-      </nav>
+  <nav>
+      <div class="row">
+          <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+          <ul class="main-nav">
+              <li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
+              <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
+              <li><a [routerLink]="['/userSearchFlightsPage']">Flights</a></li>
+              <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
+              <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
+              <li><a [routerLink]="['/userWalletPage']">Wallet</a></li>
+              <li><a [routerLink]="['/homePage']" href="javascript:void(0);" (click)="logout()">Logout</a></li>
+          </ul>
+      </div>
+    </nav>
 </header>
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,7 +33,9 @@
 <br>
 <br>
 
-<div class="row">
+
+
+<div class="row1">
   <div class="col">
     <div class="tabs">
       <div class="tab">
@@ -48,25 +51,41 @@
                   <i class="fa fa-cc-mastercard" style="color:red;"></i>
                   <i class="fa fa-cc-discover" style="color:orange;"></i>
                 </div>
+                
               <div>
                 <label for="cname">Name on Card</label>
-                <input type="text" id="cname" name="cardname">
+                <input type="text" id="cname" name="cardname" #cname="ngModel" [(ngModel)]="wallet.wname"required >
+                <span *ngIf="cname.invalid && (cname.dirty||cname.touched)" style="color: red;">
+                  <span *ngIf="cname.errors.required">Required</span>
+                </span>
               </div>
               <div>
                 <label for="ccnum">Credit card number</label>
-                <input type="text" id="ccnum" name="cardnumber" >
+                <input type="text" id="ccnum" name="cardnumber" #cardno1="ngModel" 
+                         minlength="16" maxlength="16" [(ngModel)]="wallet.number" required>
+                <span *ngIf="cardno1.invalid && (cardno1.dirty||cardno1.touched)" style="color: red;">
+                  <span *ngIf="cardno1.errors.required">Required</span>
+                  <span *ngIf="cardno1.errors.minlength">Min 16 numbers</span>
+                  </span>
               </div>
               <div>
                 <label for="expmonth">Exp Month and Exp Year</label>
-                <input type="month" id="expmonth" name="expmonth" >
+                <input type="month" id="expmonth" name="expmonth" [(ngModel)]="wallet.expmonth" required #exp1="ngModel" >
+                <span *ngIf="exp1.invalid && (exp1.dirty||exp1.touched)" style="color: red;">
+                  <span *ngIf="exp1.errors.required">Required</span>
+                </span>
               </div>
               <div>
                 <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv">
+                <input type="password" id="cvv" name="cvv" #wp2="ngModel" [(ngModel)]="wallet.pin" minlength="3" maxlength="3" required>
+                <span *ngIf="wp2.invalid && (wp2.dirty||wp2.touched)" style="color: red;">
+                  <span *ngIf="wp2.errors.required">Required</span>
+                  <span *ngIf="wp2.errors.minlength">max 3 values</span>
+                </span>
               </div>
           </form>
         </div>
-     
+
       </div>
       <div class="tab">
         <input type="radio" id="rd2" name="rd">
@@ -83,28 +102,41 @@
                 </div>
               <div>
                 <label for="cname">Name on Card</label>
-                <input type="text" id="cname" name="cardname">
+                <input type="text" id="cname" name="cardname"  #cname1="ngModel" [(ngModel)]="wallet.wname"required >
+                <span *ngIf="cname1.invalid && (cname1.dirty||cname1.touched)" style="color: red;">
+                  <span *ngIf="cname1.errors.required">Required</span>
+                </span>
               </div>
+      
               <div>
                 <label for="ccnum">Credit card number</label>
-                <input type="text" id="ccnum" name="cardnumber" >
+                <input type="number" id="ccnum" name="cardnumber" #cardno2="ngModel" 
+                minlength="16" maxlength="16" [(ngModel)]="wallet.number" required>
+                <span *ngIf="cardno2.invalid && (cardno2.dirty||cardno2.touched)" style="color: red;">
+                  <span *ngIf="cardno2.errors.required">Required</span>
+                  <span *ngIf="cardno2.errors.minlength">only 16 digits</span>
+                </span>
               </div>
+
               <div>
-                <label for="expmonth">Exp Month</label>
-                <input type="month" id="expmonth" name="expmonth" >
-              </div>
-              <div>
-                <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear">
+                <label for="expmonth">Exp Month and Exp Year</label>
+                <input type="month" id="expmonth" name="expmonth" [(ngModel)]="wallet.expmonth" required #exp1="ngModel" >
+                <span *ngIf="exp1.invalid && (exp1.dirty||exp1.touched)" style="color: red;">
+                  <span *ngIf="exp1.errors.required">Required</span>
+                </span>
+
               </div>
               <div>
                 <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv">
+                <input type="password" id="cvv" name="cvv" #wp1="ngModel" [(ngModel)]="wallet.pin" minlength=3 required>
+                <span *ngIf="wp1.invalid && (wp1.dirty||wp.touched)" style="color: red;">
+                  <span *ngIf="wp1.errors.required">Required</span>
+                  <span *ngIf="wp1.errors.minlength">only 3 values</span>
+                </span>
               </div>
+            
           </form>
-               
-        </div>
-      
+      </div>
       </div>
 
       <div class="tab">
@@ -113,10 +145,20 @@
         
         <div class="tab-content">
           <form>
-              <label for="cname">Name</label>
-              <input type="text" id="wname" name="wname">
-              <label for="wnum">Wallet number</label>
-              <input type="text" id="wnum" name="walletnumber">
+              <label for="wname">Name</label>
+              <input type="text" id="wname" name="wname" #wn="ngModel" [(ngModel)]="wallet.wname" required>
+              <span *ngIf="wn.invalid && (wn.dirty||wn.touched)" style="color: red;">
+                <span *ngIf="wn.errors.required">Required</span>
+              </span>
+             
+              
+              
+              <label for="pin">Wallet Password</label>
+              <input type="password" #wp='ngModel' pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" name="psw" id="psw" required [(ngModel)]="loginuser.password">
+              <span *ngIf="wp.invalid && (wp.dirty||wp.touched)" style="color: red;">
+                <span *ngIf="wp.errors.required">Required</span>
+                <span *ngIf="wp.errors.pattern">Password is invalid</span>
+              </span>
           </form>
         </div>
       
@@ -125,19 +167,12 @@
         <input type="radio" id="rd4" name="rd">
         <label for="rd4" class="tab-close">Close others &times;</label>
       </div>
-      
     </div>
-  </div>
-</div>
-<br><br>
-    <div class="inputBox">
-      <input type="password" #pwd='ngModel' pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" placeholder="Enter Password" name="psw" id="psw" required [(ngModel)]="loginuser.password"><br>
-      <div *ngIf="pwd.invalid && (pwd.dirty||pwd.touched)" style="color: red;">
-        <div *ngIf="pwd.errors.required">password is required</div>
-        <div *ngIf="pwd.errors.pattern">password is invalid</div>
-      </div>
     </div>
-<button type="button" (click)="payment()">Pay</button>
+</div><br>
+<button type="button" (click)="payment()" class="btn">Pay</button>
+
+
 
  
         <!-- <div class="wrapper">

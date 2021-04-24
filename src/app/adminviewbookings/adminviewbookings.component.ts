@@ -31,7 +31,7 @@ export class AdminviewbookingsComponent implements OnInit {
 
   viewticket(bookingId:number){
     this.bookService.bookingIdForViewTicketData=bookingId;
-    this.router.navigate(['/userViewTicketPage'])
+    this.router.navigate(['/viewAdminTicket'])
   }
 
 }

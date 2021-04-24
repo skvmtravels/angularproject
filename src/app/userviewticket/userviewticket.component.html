@@ -3,12 +3,13 @@
         <div class="row">
             <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
             <ul class="main-nav">
-				<li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
+				        <li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
                 <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
                 <li><a [routerLink]="['/userSearchFlightsPage']">Flights</a></li>
                 <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
                 <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
-				<li><a [routerLink]="['/homePage']">Logout</a></li>
+				        <li><a [routerLink]="['/userWalletPage']">Wallet</a></li>
+                        <li><a [routerLink]="['/homePage']" href="javascript:void(0);" (click)="logout()">Logout</a></li>
             </ul>
         </div>
       </nav>

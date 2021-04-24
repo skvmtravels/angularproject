@@ -7,6 +7,7 @@ import { Loginuser } from '../loginuser';
 import { Ticket } from '../ticket';
 import { User } from '../user';
 import { UserServiceService } from '../user-service.service';
+import { Wallet } from '../wallet';
 import { Walletdto } from '../walletdto';
 
 @Component({
@@ -24,13 +25,19 @@ export class UserpaymentComponent implements OnInit {
   enoughmoney:number;
   wal:number;
   userId:number;
+  wallet=new Wallet();
   walletdto=new Walletdto();
+  userEmail:string;
 
   constructor(private userService:UserServiceService, private bookService:BookingServiceService,private flightService:FlightServiceService,private router:Router) { }
 
   ngOnInit(): void {
    console.log( this.bookService.seatData);
    this.loginuser.email=localStorage.getItem("userEmail");
+   this.userEmail=(localStorage.getItem("userEmail"));
+    if(this.userEmail==null){
+      this.router.navigate(['/loginPage'])
+    }
 
    this.userId=Number(localStorage.getItem("userId"));
     this.userService.findUserById(this.userId).subscribe(
@@ -103,5 +110,10 @@ export class UserpaymentComponent implements OnInit {
 
     
 
+}
+
+logout():void{
+  console.log("clearing.....")
+  localStorage.clear();
 }
 }

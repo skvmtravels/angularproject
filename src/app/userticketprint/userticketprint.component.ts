@@ -6,6 +6,7 @@ import { Flight } from '../flight';
 import { BookingServiceService } from '../booking-service.service';
 import { Ticket } from '../ticket';
 import { Passenger } from '../passenger';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userticketprint',
@@ -17,10 +18,17 @@ export class UserticketprintComponent implements OnInit {
   flight=new Flight();
   tickets:Ticket[];
   passengers:Passenger[];
-  constructor(private flightService:FlightServiceService,public bookService:BookingServiceService) { }
+  ticket=new Ticket();
+  userEmail:string;
+  
+  constructor(private flightService:FlightServiceService,public bookService:BookingServiceService,private router:Router) { }
   
 
   ngOnInit(): void {
+    this.userEmail=(localStorage.getItem("userEmail"));
+    if(this.userEmail==null){
+      this.router.navigate(['/loginPage'])
+    }
     this.bookService.findFlightById(this.bookService.flightNoData).subscribe(
       findFlight=>{
         this.flight=findFlight;
@@ -52,12 +60,25 @@ export class UserticketprintComponent implements OnInit {
     var heightLeft = imgHeight;
     
     var contentDataURL = canvas.toDataURL('image/png')
-    let pdf = new jspdf('p' , 'mm', 'a4');
+    let doc = new jspdf('p' , 'mm', 'a4');
     var position=0;
+    console.log(doc.output('datauristring'));
+    doc.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
     
-    pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
-    pdf.save('ticket.pdf'); 
+    var data = new Blob([doc.output()], {
+      type: 'application/pdf'
+  });
+
+    var formdata=new FormData();
+    formdata.append("pdf",data,"ticket.pdf");
+    console.log(formdata.get("pdf"));
+    doc.save('ticket.pdf'); 
     });                                                                                   
+  }
+
+  logout():void{
+    console.log("clearing.....")
+    localStorage.clear();
   }
 
 }

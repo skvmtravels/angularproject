@@ -49,14 +49,14 @@ margin-right:auto;
 }
 
 /* boarding pass */
-@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
 body {
   text-align: center;
 }
 
 .ticket {
   display: inline-block;
-  width: 350px;
+  width: 600px;
   margin: 20px;
   background-color: #273138;
   border-radius: 10px;
@@ -68,7 +68,7 @@ body {
 }
 .ticket header {
   position: relative;
-  height: 35px;
+  height: 45px;
   background-color: #1B252E;
   padding: 10px;
   border-radius: 10px;
@@ -110,7 +110,7 @@ body {
 }
 .ticket .airports {
   padding: 5px 10px 10px 10px;
-  height: 100px;
+  height: 130px;
   text-align: center;
   position: relative;
   border-bottom: 2px dashed #000;
@@ -127,17 +127,17 @@ body {
   font-weight: 400;
 }
 .ticket .airports .airport .airport-code {
-  font-size: 32px;
+  font-size: 38px;
   font-weight: 400;
   margin: 5px 0;
 }
 .ticket .airports .airport .dep-arr-label {
   color: #9299A0;
-  font-size: 12px;
+  font-size: 22px;
   font-weight: 500;
 }
 .ticket .airports .airport .time {
-  font-size: 10px;
+  font-size: 14px;
   color: #9299A0;
 }
 .ticket .airports .airport:first-child {
@@ -146,7 +146,7 @@ body {
 .ticket .airports .airport:first-child:after {
   font-family: FontAwesome;
   color: #353E48;
-  content: "";
+  content: " "; 
   position: absolute;
   font-size: 55px;
   top: calc(50% - 25px);
@@ -177,7 +177,7 @@ body {
 .ticket .place {
   padding: 10px;
   text-align: center;
-  height: 330px;
+  height: 300px;
 }
 .ticket .place-block {
   display: inline-block;
@@ -187,17 +187,17 @@ body {
   color: orange;
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 .ticket .place-block .place-value {
   color: #9299A0;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 500;
 }
 .ticket .qr {
-  width: 220px;
-  height: 220px;
+  width: 170px;
+  height: 170px;
   margin: 20px auto;
   border-radius: 10px;
   overflow: hidden;

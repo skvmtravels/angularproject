@@ -1,18 +1,18 @@
 <header>
-    <nav>
-        <div class="row">
-            <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
-            <ul class="main-nav">
-				<li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
-                <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
-                <li><a [routerLink]="['/searchFlightsPage']">Flights</a></li>
-                <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
-                <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
-				<li><a [routerLink]="['/homePage']" href="javascript:void(0);" (click)="logout()">Logout</a></li>
-            </ul>
-        </div>
-      </nav>
-
+  <nav>
+      <div class="row">
+          <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+          <ul class="main-nav">
+              <li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
+              <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
+              <li><a [routerLink]="['/userSearchFlightsPage']">Flights</a></li>
+              <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
+              <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
+              <li><a [routerLink]="['/userWalletPage']">Wallet</a></li>
+              <li><a [routerLink]="['/homePage']" href="javascript:void(0);" (click)="logout()">Logout</a></li>
+          </ul>
+      </div>
+    </nav>
 </header>
 <div class="quote">
     <h2 style="color: black;">Hi {{user.firstName}}</h2>
@@ -42,6 +42,119 @@
   </div>
 </div>
 
+<br>
+<br>
+<br>
+
+<div class="flip-card" style="margin: auto;">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="/assets/images/userdetails.JPG" style="width:400px;height:400px;">
+      <h2>Check Out Your<br>details</h2>
+    </div>
+    <div class="flip-card-back" style="width:400px;height:400px;">
+      <h2 class="center">{{user.firstName}} {{user.lastName}}</h2>
+      <br>
+      <br>
+      <br>
+      <p class="center">{{user.user_id}}</p>
+      <p class="center">{{user.email}} </p>
+      <p class="center">{{user.dob}}</p>
+      <p class="center">{{user.phoneNo}} </p>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <!--       1st Card -->
+  <a routerLink='/userProfilePage'><div class="card card-1">
+    <div class="card-image">
+    </div>
+    <div class="card-text">
+      <span class="date"></span>
+      <h2>Profile</h2>
+      <p><b>Welcome {{user.firstName}}!! <br>You are a valuable customer!
+        Check Out Your Awesome Details here!!<br></b></p>
+    </div>
+    <div class="card-stats">
+      <div class="stats">
+        <div class="value"></div>
+        <div class="type"></div>
+      </div>
+     
+    </div>
+  </div></a>
+  <!--          2nd Card (Repeat above)  -->
+  <a routerLink='/searchFlightsPage'><div class="card card-2">
+    <div class="card-image">
+    </div>
+    <div class="card-text">
+      <span class="date"></span>
+      <h2>Flights</h2>
+      <p>Bon Voyage <b>{{user.firstName}}</b>!!<br>
+        Wanna Experience the adrenaline rush?
+      Search for flights here!</p>
+    </div>
+    <div class="card-stats">
+      <div class="stats">
+        <div class="value"></div>
+        <div class="type"></div>
+      </div>
+    </div>
+  </div></a>
+ <a routerLink='/userBookingsPage'> <div class="card card-3">
+    <div class="card-image">
+    </div>
+    <div class="card-text">
+      <span class="date"></span>
+      <h2>Bookings</h2>
+      <p><b>Hey Voyager!Check out your latest flight experience here and<br>
+      Dont Forget To book for a Summer Vacation!!</b></p>
+    </div>
+    <div class="card-stats">
+      <div class="stats">
+        <div class="value"></div>
+        <div class="type"></div>
+      </div>
+    </div>
+  </div></a>
+
+<a routerLink='/userCancellationsPage'> <div class="card card-4">
+  <div class="card-image">
+  </div>
+  <div class="card-text">
+    <span class="date"></span>
+    <h2>Cancellations</h2>
+    <p>Sometimes dropping the existing plan gives you a better plan!<br>
+      Check out your missed trips here!</p>
+  </div>
+  <div class="card-stats">
+    <div class="stats">
+      <div class="value"></div>
+      <div class="type"></div>
+    </div>
+  </div>
+</div></a>
+</div>
+<br>
 
 <div class="slider-container">
   <div class="flexbox-slider flexbox-slider-2">

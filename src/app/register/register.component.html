@@ -73,7 +73,7 @@
             </div>
   
         <label for="dob"><b>Date of Birth</b></label>
-        <input type="date" placeholder="Enter Date of Birth" name="dob" #dob='ngModel' id="dob" required [(ngModel)]="user.dob">
+        <input type="date" placeholder="Enter Date of Birth" name="dob" #dob='ngModel' id="dob" [max]="maxDate" required [(ngModel)]="user.dob">
         <div *ngIf="dob.invalid && (dob.dirty||dob.touched)" style="color: red;">
           <div *ngIf="dob.errors.required">DOB is required</div>
           <div *ngIf="dob.errors.pattern">DOB is invalid</div>

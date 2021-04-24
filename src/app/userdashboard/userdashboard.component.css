@@ -1,13 +1,268 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 
 header {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(/assets/img/hero.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(/assets/img/vikas-gurjar-jtRyCt9kdQY-unsplash.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 40vh;
-    background-attachment: fixed;
-    
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.2))), url(/assets/img/gettyimages-1012124606-612x612.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(/assets/img/gettyimages-1012124606-612x612.jpg);
+  background-size: cover;
+  background-position: center;
+
+  background-attachment: fixed;
+  
+}
+
+.container {
+  display: flex;
+  
+}
+
+.card-1 {
+  --color: rgb(255, 7, 110);
+  
+--image:url("/assets/img/userdash.png")
+}
+.card-2 {
+  --color: rgb(95, 0, 173);
+  
+  --image:url("/assets/img/userdash1.png")
+ 
+}
+.card-3 {
+  --color: rgb(1, 19, 102);
+  --image:url("/assets/img/userdash2.png");
+}
+.card-4 {
+  --color: rgb(131, 219, 59);
+  --image:url("/assets/img/userdash3.png"); 
+}
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 270px;
+  grid-template-rows: 180px 150px 150px;
+  grid-template-areas: "image" "text" "stats";
+  
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  width: 270px;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin: 10px; 
+  border-radius: 18px;
+  /* margin-left: auto;
+  margin-right: auto;
+  margin-top: auto; */
+
+}
+
+.card-image {
+  grid-area: image;
+  background: var(--image);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+.card-text {
+  grid-area: text;
+  margin: 5px;
+}
+
+.card-text .date {
+  color: var(--color);
+  font-size: 10px;
+  font-weight: bolder;
+}
+
+.card-text p {
+  color: rgb(17, 15, 15);
+  font-size: 13px;
+  font-weight: 300;
+  font-family: cursive;
+}
+.card-text h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+.card-stats {
+  display: flex;
+  justify-content: space-around;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: var(--color);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.card-stats .stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  color: white;
+}
+
+.card-stats .type {
+  font-size: 9px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.card-stats .value {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-image: url('/assets/images/userdetails1.JPG');
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card-back center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: large;
+}
+
+.container {
+  display: flex;
+  /* background-image: url("D:\AirReser\src\assets\img\marco-tjokro-5ChChAtRUk8-unsplash.jpg"); */
+}
+
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 270px;
+  grid-template-rows: 180px 150px 150px;
+  grid-template-areas: "image" "text" "stats";
+  
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  width: 270px;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin: 10px; 
+  border-radius: 18px;
+  /* margin-left: auto;
+  margin-right: auto;
+  margin-top: auto; */
+
+}
+
+.card-image {
+  grid-area: image;
+  background: var(--image);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+.card-text {
+  grid-area: text;
+  margin: 5px;
+}
+
+.card-text .date {
+  color: var(--color);
+  font-size: 10px;
+  font-weight: bolder;
+}
+
+.card-text p {
+  color: rgb(17, 15, 15);
+  font-size: 13px;
+  font-weight: 300;
+  font-family: cursive;
+}
+.card-text h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+.card-stats {
+  display: flex;
+  justify-content: space-around;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: var(--color);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.card-stats .stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  color: white;
+}
+
+.card-stats .type {
+  font-size: 9px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.card-stats .value {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
 }
 
 .quote

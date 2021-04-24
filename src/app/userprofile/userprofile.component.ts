@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from "../user";
 import { UserServiceService } from "../user-service.service";
 
@@ -11,10 +12,22 @@ export class UserprofileComponent implements OnInit {
 
   user:User=new User();
   userId:number;
+  userEmail:string;
 
-  constructor(private service:UserServiceService) { }
+  constructor(private service:UserServiceService,private router:Router) { }
 
   ngOnInit(): void {
+    this.userEmail=(localStorage.getItem("userEmail"));
+    this.userId=Number(localStorage.getItem("userId"));
+    this.service.findUserById(this.userId).subscribe(
+      fuser=>{
+        this.user=fuser;
+        console.log(this.userId);
+      }
+    );
+    if(this.userEmail==null){
+      this.router.navigate(['/loginPage'])
+    }
   }
 
   updateUser(userForm1){
@@ -44,6 +57,9 @@ export class UserprofileComponent implements OnInit {
     );
   }
 
-  
+  logout():void{
+    console.log("clearing.....")
+    localStorage.clear();
+  }
 
 }

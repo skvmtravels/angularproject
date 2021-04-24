@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Loginuser } from './loginuser';
 import { User } from './user';
 import { Walletdto } from './walletdto';
+import { Refundmail } from './refundmail';
 
 @Injectable({
   providedIn: 'root'
@@ -55,5 +56,27 @@ export class UserServiceService {
 
   payment(walletdto:Walletdto):Observable<Number>{
     return this.httpClient.post<Number>("http://localhost:9090/paywallet",walletdto); 
+  }
+
+  viewAllUsers():Observable<User[]>{
+    return this.httpClient.get<User[]>("http://localhost:9090/viewallusers");
+  }
+
+  
+  sendOtp(email:String):Observable<number>{
+    return this.httpClient.get<number>("http://localhost:9090/send-otp?email="+email);
+  } 
+
+  validEmail(email:String):Observable<Boolean>
+  {
+    return this.httpClient.get<Boolean>("http://localhost:9090/validEmail?email="+email);
+  } 
+
+  resetPassword(email:string,password:string):Observable<void>{
+    return this.httpClient.put<void>("http://localhost:9090/resetPassword/"+email+"/"+password,{email,password});
+  }
+
+  refundEmail(refundmail:Refundmail):Observable<void>{
+    return this.httpClient.put<void>("localhost:9090/changebookstatus",refundmail);
   }
 }

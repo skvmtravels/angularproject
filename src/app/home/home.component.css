@@ -5,14 +5,13 @@
 }
 
 
- /* header {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url("src\assets/img/hero.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("/assets/img/background.jpg");
+header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))), url("/assets/img/background.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/img/background.jpg");
     background-size: cover; 
     background-position: center;
-    height: 40vh;
     background-attachment: fixed;
-  }  */
+  }
 
   .main-nav {
     float: right;

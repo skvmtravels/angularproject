@@ -8,4 +8,5 @@ export class User {
 	email:String;
 	phoneNo:String;
 	wallet:number;
+	confirmpassword:string;
 }

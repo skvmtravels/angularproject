@@ -34,6 +34,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserwalletComponent } from './userwallet/userwallet.component';
 import { UserviewticketComponent } from './userviewticket/userviewticket.component';
 import { AdminviewbookingsComponent } from './adminviewbookings/adminviewbookings.component';
+import { AdminviewusersComponent } from './adminviewusers/adminviewusers.component';
+import { AdminviewticketComponent } from './adminviewticket/adminviewticket.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { VerifyotpComponent } from './verifyotp/verifyotp.component';
 
 
 
@@ -67,6 +72,11 @@ import { AdminviewbookingsComponent } from './adminviewbookings/adminviewbooking
     UserwalletComponent,
     UserviewticketComponent,
     AdminviewbookingsComponent,
+    AdminviewusersComponent,
+    AdminviewticketComponent,
+    ChangepasswordComponent,
+    ForgotpasswordComponent,
+    VerifyotpComponent,
 
     ],
   imports: [

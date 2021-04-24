@@ -24,10 +24,16 @@ export class UserbookingsComponent implements OnInit {
   refundMoney:number;
   tprice:number;
   nofpass:number;
+  remail:string;
   i:number;
   
 
   ngOnInit(): void {
+    this.remail=localStorage.getItem("userEmail");
+    
+    if(this.remail==null){
+      this.router.navigate(['/loginPage'])
+    }
     this.bookService.deleteOldTickets().subscribe(
       dt=>{
         console.log(dt);
@@ -44,6 +50,8 @@ export class UserbookingsComponent implements OnInit {
   }
 
   cancelticket(bookingId:number){
+
+   
     this.bookService.findBookinfById(bookingId).subscribe(
       findBook=>{
         this.nofpass=findBook.noOfPassengers;
@@ -72,6 +80,13 @@ export class UserbookingsComponent implements OnInit {
           }
         );
 
+        // this.userService.refundEmail(bookingId,this.remail).subscribe(
+        //   refMail=>{
+        //     console.log(refMail);
+        //     location.reload();
+        //   }
+        // );
+
         this.bookService.cancelTickets(bookingId).subscribe(
           cancelbook=>{
             
@@ -81,12 +96,19 @@ export class UserbookingsComponent implements OnInit {
         );
         
         }, 100)
+
+        
     
   }
 
   viewticket(bookingId:number){
     this.bookService.bookingIdForViewTicketData=bookingId;
     this.router.navigate(['/userViewTicketPage'])
+  }
+
+  logout():void{
+    console.log("clearing.....")
+    localStorage.clear();
   }
 
 }

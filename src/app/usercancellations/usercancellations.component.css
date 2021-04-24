@@ -1,21 +1,52 @@
 header {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.7))), url(/assets/img/hero.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(/assets/img/vikas-gurjar-jtRyCt9kdQY-unsplash.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    background-attachment: fixed;
-    
-  }
-  /* table{
-    
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.7))), url(/assets/img/gettyimages-1012124606-612x612.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(/assets/img/gettyimages-1012124606-612x612.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 20vh;
+  background-attachment: fixed;
+  
+}
+   /* table{ 
     color: black;
     font-weight: bold;
-    background-color:whitesmoke;
-    
-    
-  } */
-  .styled-table {
+
+  }  */
+  button{
+    background-color: orange;
+    border-radius: 10%;
+    width: 100px;
+    transform: translate(50%);
+}
+
+
+table {
+  font: normal 500 23px/ 30px ;
+  border-collapse: collapse;
+  width: 100%;
+  }
+  
+  td, th {
+  border: 2px solid orange;
+  text-align: left;
+  padding: 8px;
+  
+  }
+  
+  tr{
+  background-color: silver;
+  }
+  .head{
+  background-color: white;
+  }
+  tr:nth-child(even) {
+  background-color: lightgray;
+  }
+  .centertable {
+  margin-left:auto; 
+  margin-right:auto;
+  }
+  /* .styled-table {
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
@@ -25,19 +56,18 @@ header {
     width: 70%;
     box-shadow: 0 0 20px black;
     background-color:whitesmoke;
-    
-  
   }
   
   .styled-table thead tr {
     background-color: darkorange;
     color:black;
     text-align: left;
+    
   }
   
   .styled-table th,
   .styled-table td {
-      padding: 12px 15px;
+      padding: 10px 15px;
       color: black;
       font-weight: bold;
       font-family: serif;
@@ -59,4 +89,4 @@ header {
   .styled-table tbody tr.active-row {
     
     color: black;
-  }
+  } */

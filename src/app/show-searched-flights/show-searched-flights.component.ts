@@ -20,6 +20,7 @@ export class ShowSearchedFlightsComponent implements OnInit {
   booking:Booking=new Booking();
   todayDate=new Date();
   seatmap=new Seatmap();
+  loggeduser:string;
 
    fromCity:string;
    toCity:string;
@@ -28,6 +29,9 @@ export class ShowSearchedFlightsComponent implements OnInit {
   constructor(private service:FlightServiceService,private bookService:BookingServiceService,private router:Router) { }
 
   ngOnInit(): void {
+    this.loggeduser=localStorage.getItem("userEmail");
+
+    
     this.fromCity=this.service.fromCityData;
     this.toCity=this.service.toCityData;
     this.dateT=this.service.dateTdata;
@@ -35,6 +39,10 @@ export class ShowSearchedFlightsComponent implements OnInit {
     this.service.searchFlight(this.fromCity.toLowerCase(),this.toCity.toLowerCase()).subscribe(
       sflight=>{
         this.flights=sflight;
+        console.log(this.flights.length);
+        if(this.flights.length==0){
+          alert("No flights found!")
+        }
         console.log(sflight);
       }
     );
@@ -50,6 +58,11 @@ export class ShowSearchedFlightsComponent implements OnInit {
   }
 
   bookFlight(flight_no:number){
+    console.log(this.loggeduser);
+    if(this.loggeduser==null){
+      this.router.navigate(['/loginPage'])
+    }
+    else{
     this.booking.flight_no=flight_no;
     this.bookService.flightNoData=flight_no;
     this.booking.user_id=Number(localStorage.getItem("userId"));
@@ -65,7 +78,7 @@ export class ShowSearchedFlightsComponent implements OnInit {
           this.router.navigate(['/userPassengerDetailsPage']);
         }
       }
-    );
+    );}
   }
 
 

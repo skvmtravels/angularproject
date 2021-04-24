@@ -5,6 +5,7 @@ import { BookingServiceService } from '../booking-service.service';
 import { Flight } from '../flight';
 import { Passenger } from '../passenger';
 import { Ticket } from '../ticket';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userviewticket',
@@ -16,11 +17,16 @@ export class UserviewticketComponent implements OnInit {
   flight=new Flight();
   tickets:Ticket[];
   passengers:Passenger[];
+  userEmail:string;
 
   
-  constructor(public bookService:BookingServiceService) { }
+  constructor(public bookService:BookingServiceService,private router:Router) { }
 
   ngOnInit(): void {
+    this.userEmail=(localStorage.getItem("userEmail"));
+    if(this.userEmail==null){
+      this.router.navigate(['/loginPage'])
+    }
     this.bookService.findFlightByBookingId(this.bookService.bookingIdForViewTicketData).subscribe(
       findFlight=>{
         this.flight=findFlight;
@@ -58,6 +64,11 @@ export class UserviewticketComponent implements OnInit {
     pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
     pdf.save('ticket.pdf'); 
     });                                                                                   
+  }
+
+  logout():void{
+    console.log("clearing.....")
+    localStorage.clear();
   }
 
 }

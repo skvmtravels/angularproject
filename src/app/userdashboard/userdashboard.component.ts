@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../user';
 import { UserServiceService } from '../user-service.service';
 
@@ -10,7 +11,7 @@ import { UserServiceService } from '../user-service.service';
 export class UserdashboardComponent implements OnInit {
 
   
-  constructor(private service:UserServiceService) { }
+  constructor(private service:UserServiceService,private router:Router) { }
 
   userEmail:string;
   user:User=new User();
@@ -19,6 +20,9 @@ export class UserdashboardComponent implements OnInit {
   ngOnInit(): void {
 
     this.userEmail=(localStorage.getItem("userEmail"));
+    if(this.userEmail==null){
+      this.router.navigate(['/loginPage'])
+    }
     this.service.findUserByEmail(this.userEmail).subscribe(
       fetchedUser=>{
         console.log(JSON.stringify(fetchedUser));

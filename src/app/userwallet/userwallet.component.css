@@ -1,35 +1,14 @@
 /* Style the header links */
-.header a {
-    margin: auto;
-    float: left;
-    color: burlywood;
-    background-color: crimson;
-    text-align: center;
-    padding: 4px;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 40px;
-    border-radius: 4px;
-  }
+header {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.7))), url(/assets/img/gettyimages-1012124606-612x612.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(/assets/img/gettyimages-1012124606-612x612.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 20vh;
+  background-attachment: fixed;
   
-  /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
-  /* .header a.logo {
-    font-size: 25px;
-    font-weight: bold;
-  } */
-  
-  /* Change the background color on mouse-over */
-  .header a:hover {
-    height: 40px;
-    background-color: lightgray;
-    color: black;
-  }
-  
-  
-  /* Float the link section to the right */
-  .header-right {
-    float: right;
-  }
+}
+
 
   input[type=text], input[type=password],input[type=date],input[type=tel] {
     width: 100%;

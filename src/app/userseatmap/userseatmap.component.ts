@@ -23,12 +23,17 @@ export class UserseatmapComponent implements OnInit {
   sts:string;
   seatmap=new Seatmap();
   tickets=new Ticket();
+  userEmail:string;
 
   
 
   constructor(private flightService:FlightServiceService,private bookService:BookingServiceService,private router:Router) { }
 
   ngOnInit(): void {
+    this.userEmail=(localStorage.getItem("userEmail"));
+    if(this.userEmail==null){
+      this.router.navigate(['/loginPage'])
+    }
     this.executeOnce();
     var aaa="1D";
     console.log(this.flightService.dateTdata);
@@ -134,15 +139,20 @@ export class UserseatmapComponent implements OnInit {
 
   bookseats(){
 
-    
-    
-    this.executeOnce();
+    if($('input[type=checkbox]:checked').length<this.count){
+      alert("select seats for all passengers");
+    }
+    else{
+      this.executeOnce();
 
     
 
     setTimeout( ()=>{
       this.router.navigate(['/userPaymentPage']);
       }, 200)
+    
+    }
+    
     
      
     
@@ -158,6 +168,11 @@ export class UserseatmapComponent implements OnInit {
     // });
 
 
+  }
+
+  logout():void{
+    console.log("clearing.....")
+    localStorage.clear();
   }
 
 }

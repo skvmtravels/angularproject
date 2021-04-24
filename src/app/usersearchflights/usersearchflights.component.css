@@ -1,15 +1,60 @@
 header {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.7))), url(/assets/img/hero.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(/assets/img/vikas-gurjar-jtRyCt9kdQY-unsplash.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.7))), url(/assets/img/gettyimages-1012124606-612x612.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(/assets/img/gettyimages-1012124606-612x612.jpg);
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 20vh;
     background-attachment: fixed;
     
   }
-
  
-  .section {
+  
+     
+  .hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+  
+  .logo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+  }
+  
+  .main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+  }
+  
+  .main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+  }
+  
+  .main-nav li a:link,
+  .main-nav li a:visited {
+    padding: 8px 0;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+  }
+  
+  .main-nav li a:hover,
+  .main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+  }
+
+.section {
 	position: relative;
 	height: 100vh;
 }
@@ -35,6 +80,9 @@ header {
 	border-radius: 6px;
 }
 
+.switch{
+	background-color: transparent;
+}
 .booking-form .form-group {
 	position: relative;
 }

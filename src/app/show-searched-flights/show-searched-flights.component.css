@@ -50,3 +50,36 @@ header {
   .main-nav li a:active {
     border-bottom: 2px solid #e67e22;
   }
+
+  button{
+    background-color: orange;
+    border-radius: 30px;
+}
+
+
+table {
+  font: normal 500 23px/ 30px ;
+  border-collapse: collapse;
+  width: 100%;
+  }
+  
+  td, th {
+  border: 2px solid orange;
+  text-align: left;
+  padding: 8px;
+  
+  }
+  
+  tr{
+  background-color: silver;
+  }
+  .head{
+  background-color: white;
+  }
+  tr:nth-child(even) {
+  background-color: lightgray;
+  }
+  .centertable {
+  margin-left:auto; 
+  margin-right:auto;
+  }

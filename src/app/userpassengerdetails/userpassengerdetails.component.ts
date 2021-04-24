@@ -13,9 +13,14 @@ export class UserpassengerdetailsComponent implements OnInit {
   passenger= new Passenger();
   dataArray=[];
   i:number=0;
+  userEmail:string;
   constructor(private bookService:BookingServiceService,private router:Router) { }
 
   ngOnInit(): void {
+    this.userEmail=(localStorage.getItem("userEmail"));
+    if(this.userEmail==null){
+      this.router.navigate(['/loginPage'])
+    }
     this.passenger=new Passenger();
     this.dataArray.push(this.passenger);
   }
@@ -34,7 +39,8 @@ export class UserpassengerdetailsComponent implements OnInit {
   removeForm(index){
     this.dataArray.splice(index);
   }
-  onSubmit(){
+  onSubmit(passForm){
+    if(passForm.valid){
     if(this.dataArray.length==this.bookService.noOfPassengersData){
       console.log("okok");
       this.bookService.passengerIdData=50001;
@@ -62,7 +68,12 @@ export class UserpassengerdetailsComponent implements OnInit {
     }
     else{
       alert("enter all passenger details")
-    }
+    }}
+  }
+
+  logout():void{
+    console.log("clearing.....")
+    localStorage.clear();
   }
 
 }

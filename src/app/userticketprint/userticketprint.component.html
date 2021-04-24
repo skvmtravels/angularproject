@@ -1,19 +1,19 @@
 <header>
-    <nav>
-        <div class="row">
-            <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
-            <ul class="main-nav">
-                <li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
-                <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
-                <li><a [routerLink]="['/searchFlightsPage']">Flights</a></li>
-                <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
-                <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
-                <li><a [routerLink]="['/userWalletPage']">Wallet</a></li>
-                <li><a [routerLink]="['/homePage']">Logout</a></li>
-            </ul>
-        </div>
-      </nav>
-  </header>
+  <nav>
+      <div class="row">
+          <img src="/assets/img/1logo-white.png" alt="omnifood logo" class="logo">
+          <ul class="main-nav">
+              <li><a [routerLink]="['/userDashboardPage']">Dashboard</a></li>
+              <li><a [routerLink]="['/userProfilePage']">Profile</a></li>
+              <li><a [routerLink]="['/userSearchFlightsPage']">Flights</a></li>
+              <li><a [routerLink]="['/userBookingsPage']">Bookings</a></li>
+              <li><a [routerLink]="['/userCancellationsPage']">Cancellations</a></li>
+              <li><a [routerLink]="['/userWalletPage']">Wallet</a></li>
+              <li><a [routerLink]="['/homePage']" href="javascript:void(0);" (click)="logout()">Logout</a></li>
+          </ul>
+      </div>
+    </nav>
+</header>
   
   <br>
   <br>
@@ -92,22 +92,15 @@
       
   </table>
   
-  <div>
+  <div  *ngFor="let passenger of passengers;let i=index">
     <div class="ticket">
       <header>
         <div class="company-name">
           SKVM Airlines
         </div>
-        <div class="gate">
-          <div>
-            Gate
-          </div>
-          <div>
-            B4
-          </div>
-        </div>
+        
       </header>
-      <section class="airports">
+      <section class="airports" >
         <div class="airport">        
           <div class="airport-code">
             {{flight.fromCity}}
@@ -131,21 +124,21 @@
           </div>
         </div>
       </section>
-      <section class="place">
+      <section class="place" >
         <div class="place-block">
           <div class="place-label">
             Passenger Name
           </div>
           <div class="place-value">
-            Manan Bohra
+            {{passenger.firstName}}
           </div>
         </div>
-        <div class="place-block">
+        <div class="place-block" >
           <div class="place-label">
             Seat No
           </div>
           <div class="place-value">
-            1D
+            {{bookService.seatData[i]}}
           </div>
         </div>
         <div class="place-block">
@@ -153,11 +146,11 @@
             Age
           </div>
           <div class="place-value">
-            23
+            {{passenger.age}}
           </div>
         </div>
         <div class="qr">
-          <img src="/assets/images/email welcome.JPG" />
+          <img src="/assets/images/download.png" />
         </div>
       </section>
     </div>

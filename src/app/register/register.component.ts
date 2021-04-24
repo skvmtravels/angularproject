@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../user';
 import { UserServiceService } from '../user-service.service';
+import * as moment from 'moment';
 
 
 @Component({
@@ -13,6 +14,8 @@ import { UserServiceService } from '../user-service.service';
 export class RegisterComponent implements OnInit {
 
   user:User=new User();
+  minDate = moment(new Date()).format('YYYY-MM-DD');
+  maxDate ="2003-01-01";
   
   constructor(private service:UserServiceService,private router:Router) { }
 
