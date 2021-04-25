@@ -20,6 +20,13 @@ export class UserticketprintComponent implements OnInit {
   passengers:Passenger[];
   ticket=new Ticket();
   userEmail:string;
+  i:number;
+  hi:string="Hi ";
+  space:string=" ";
+  ty:string="! Thank you for flying with SKVM Travels! Your booking ID is: ";
+  sn:string=". Your seat number is: "
+  pls:string=". Please save this for future references. Carry your Id proof and e-ticket with you. Your wish is our command.";
+  qrvals:string;
   
   constructor(private flightService:FlightServiceService,public bookService:BookingServiceService,private router:Router) { }
   
@@ -46,7 +53,8 @@ export class UserticketprintComponent implements OnInit {
       findpasseng=>{
         this.passengers=findpasseng;
       }
-    );
+    );    
+
   }
 
   
@@ -64,6 +72,7 @@ export class UserticketprintComponent implements OnInit {
     var position=0;
     console.log(doc.output('datauristring'));
     doc.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
+    //this.qrval= doc.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
     
     var data = new Blob([doc.output()], {
       type: 'application/pdf'

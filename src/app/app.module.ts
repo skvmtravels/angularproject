@@ -39,6 +39,8 @@ import { AdminviewticketComponent } from './adminviewticket/adminviewticket.comp
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { VerifyotpComponent } from './verifyotp/verifyotp.component';
+import { QRCodeModule } from 'angular2-qrcode';
+import { PrintreceiptComponent } from './printreceipt/printreceipt.component';
 
 
 
@@ -77,6 +79,7 @@ import { VerifyotpComponent } from './verifyotp/verifyotp.component';
     ChangepasswordComponent,
     ForgotpasswordComponent,
     VerifyotpComponent,
+    PrintreceiptComponent,
 
     ],
   imports: [
@@ -86,7 +89,8 @@ import { VerifyotpComponent } from './verifyotp/verifyotp.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    QRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
