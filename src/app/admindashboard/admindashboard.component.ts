@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Flight } from '../flight';
+import { FlightServiceService } from '../flight-service.service';
 
 @Component({
   selector: 'app-admindashboard',
@@ -8,9 +10,15 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class AdmindashboardComponent implements OnInit {
 
-  constructor() { }
+  flights:Flight[];
+  constructor(private flightservice:FlightServiceService) { }
 
   ngOnInit(): void {
+    this.flightservice.viewAllFlights().subscribe(
+      vf=>{
+        this.flights=vf;
+      }
+    );
   }
 
   customOptions: OwlOptions = {

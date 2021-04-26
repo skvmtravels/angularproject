@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Booking } from './booking';
+import { Emaildto } from './emaildto';
 import { Flight } from './flight';
 import { Passenger } from './passenger';
 import { Seatmap } from './seatmap';
@@ -94,5 +95,9 @@ export class BookingServiceService {
 
   viewAllBookingAdminFalse():Observable<Booking[]>{
     return this.httpClient.get<Booking[]>("http://localhost:9090/viewadminbookingfalse");
+  }
+
+  sendTicketDetails(emailDto:Emaildto):Observable<void>{
+    return this.httpClient.post<void>("http://localhost:9090/sendticketmail",emailDto);
   }
 }

@@ -7,6 +7,7 @@ import { BookingServiceService } from '../booking-service.service';
 import { Ticket } from '../ticket';
 import { Passenger } from '../passenger';
 import { Router } from '@angular/router';
+import { Emaildto } from '../emaildto';
 
 @Component({
   selector: 'app-userticketprint',
@@ -19,6 +20,7 @@ export class UserticketprintComponent implements OnInit {
   tickets:Ticket[];
   passengers:Passenger[];
   ticket=new Ticket();
+  emaildto=new Emaildto();
   userEmail:string;
   i:number;
   hi:string="Hi ";
@@ -33,12 +35,18 @@ export class UserticketprintComponent implements OnInit {
 
   ngOnInit(): void {
     this.userEmail=(localStorage.getItem("userEmail"));
+    this.emaildto.booking_id=this.bookService.bookingIdData;
+    this.emaildto.email=(localStorage.getItem("userEmail"));
+    this.emaildto.flight_no=this.bookService.flightNoData;
+
     if(this.userEmail==null){
       this.router.navigate(['/loginPage'])
     }
     this.bookService.findFlightById(this.bookService.flightNoData).subscribe(
       findFlight=>{
         this.flight=findFlight;
+        this.emaildto.fromCity=findFlight.fromCity;
+        this.emaildto.toCity=findFlight.toCity;
       }
     );
 
@@ -57,6 +65,13 @@ export class UserticketprintComponent implements OnInit {
 
   }
 
+  public emailticket(){
+    this.bookService.sendTicketDetails(this.emaildto).subscribe(
+      sendE=>{
+        console.log(sendE);
+      }
+    );
+  }
   
   public downloadPDF(){
     var data = document.getElementById('table');
