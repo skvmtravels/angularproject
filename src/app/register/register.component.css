@@ -140,6 +140,27 @@ button:hover {
   }
 }
 
+#visibility{
+  position: absolute;
+  right: 10px;
+  transform: translate(0,-50%);
+  top: 45%;
+  cursor: pointer;
+}
+.fa{
+  font: size 20px;
+  color: black;
+  
+}
+mat-form-field{
+  width: 100%;
+}
+/* .inline-el{
+  left: 30%;
+  top: 54%;
+  position: absolute;
+} */
+
 
 
 

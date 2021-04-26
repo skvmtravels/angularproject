@@ -85,14 +85,6 @@
 
 		  <br>
 
-      <label for="psw-repeat"><b>Confirm Password</b></label><br>
-      <input type="password" #pwd='ngModel' pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" placeholder="Enter Password" name="psw" id="psw" required [(ngModel)]="user.password"><br>
-          <div *ngIf="pwd.invalid && (pwd.dirty||pwd.touched)" style="color: red;">
-            <div *ngIf="pwd.errors.required">password is required</div>
-            <div *ngIf="pwd.errors.pattern">password is invalid</div>
-          </div>
-
-		  <br>
 
       <label for="dob"><b>Date of Birth</b></label><br>
       <input type="date" placeholder="Enter Date of Birth" name="dob" #dob='ngModel' id="dob" required [(ngModel)]="user.dob">

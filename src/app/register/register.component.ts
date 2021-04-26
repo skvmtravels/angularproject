@@ -14,6 +14,7 @@ import * as moment from 'moment';
 export class RegisterComponent implements OnInit {
 
   user:User=new User();
+  hide=true;
   minDate = moment(new Date()).format('YYYY-MM-DD');
   maxDate ="2003-01-01";
   
