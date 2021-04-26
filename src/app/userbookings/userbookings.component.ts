@@ -89,7 +89,7 @@ export class UserbookingsComponent implements OnInit {
 
         this.bookService.cancelTickets(bookingId).subscribe(
           cancelbook=>{
-            
+            alert("ticket cancelled")
             console.log(cancelbook);
             location.reload();
           }

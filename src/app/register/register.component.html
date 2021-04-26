@@ -38,7 +38,7 @@
             </div>
   
         <label for="firstName"><b>First Name</b></label>
-        <input type="text" #firstName='ngModel' minlength="3" placeholder="Enter First Name" pattern="(/^[A-Za-z]+$/)" name="firstName" id="firstName" required [(ngModel)]="user.firstName"><br>
+        <input type="text" #firstName='ngModel' minlength="3" placeholder="Enter First Name" pattern="[a-zA-Z][a-zA-Z ]+" name="firstName" id="firstName" required [(ngModel)]="user.firstName"><br>
             <div *ngIf="firstName.invalid && (firstName.dirty||firstName.touched)" style="color: red;">
               <div *ngIf="firstName.errors.required">FirstName is required</div>
               <div *ngIf="firstName.errors.minlength">FirstName must have atleast 3 char</div>
@@ -46,7 +46,7 @@
             </div>
   
         <label for="lastName"><b>Last Name</b></label>
-        <input type="text" #lastName='ngModel' minlength="3" placeholder="Enter Last Name" pattern="(/^[A-Za-z]+$/)" name="lastName" id="lastName" required [(ngModel)]="user.lastName"><br>
+        <input type="text" #lastName='ngModel' minlength="3" placeholder="Enter Last Name" pattern="[a-zA-Z][a-zA-Z ]+" name="lastName" id="lastName" required [(ngModel)]="user.lastName"><br>
             <div *ngIf="lastName.invalid && (lastName.dirty||lastName.touched)" style="color: red;">
               <div *ngIf="lastName.errors.required">LastName is required</div>
               <div *ngIf="lastName.errors.minlength">LastName must have atleast 3 char</div>
